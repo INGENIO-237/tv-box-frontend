@@ -1,3 +1,9 @@
+.main-hero {
+  background: url("../images/V35pRWqSchtql4CGpMQTG-transformed.jpeg");
+  background-position-x: 20%;
+  background-position-y: 40%;
+}
+
 .inquiries {
   display: flex;
   width: 100%;
@@ -27,7 +33,7 @@
   text-decoration: none;
 }
 .inquiries .related-questions {
-  height: 50%-sel;
+  height: 50%;
   text-align: left;
 }
 .inquiries .related-questions .heading {
