@@ -1,7 +1,7 @@
 const asyncHandler = require("express-async-handler");
 
 const getAllArticlesHandler = asyncHandler(async (req, res) => {
-  res.render("pages/articles");
+  res.render("pages/articles/articles");
 });
 
 // // Create an article

@@ -17,6 +17,7 @@ app.use("/", require("./routes/main"));
 app.use("/account", require("./routes/auth"));
 app.use("/admin", require("./routes/admin"));
 app.use("/articles", require("./routes/article"));
+app.use("/checkout", require("./routes/chekout"));
 
 // Just for rendering the view and handle commercial request
 app.use("/commercials", require("./routes/commercial"));
