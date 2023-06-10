@@ -1,0 +1,382 @@
+<main
+  class="main-content position-relative max-height-vh-100 h-100 border-radius-lg"
+>
+  <!-- Form -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Promotion</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form role="form">
+            <label>Marketer</label>
+            <div class="mb-3">
+              <select
+                class="form-control"
+                placeholder="Marketer"
+                aria-label="Marketer"
+                aria-describedby="marketer-addon"
+              >
+                <option value="">John Doe</option>
+                <option value="">Lorem</option>
+              </select>
+            </div>
+            <label>Phone</label>
+            <div class="mb-3">
+              <input
+                type="tel"
+                class="form-control"
+                placeholder="Phone"
+                aria-label="Phone"
+                aria-describedby="phone-addon"
+              />
+            </div>
+            <label>Phone</label>
+            <div class="mb-3">
+              <input
+                type="tel"
+                class="form-control"
+                placeholder="Phone"
+                aria-label="Phone"
+                aria-describedby="phone-addon"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="button" class="btn btn-info">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End -->
+
+  <!-- Delete Pop up -->
+  <div
+    class="modal fade"
+    id="deleteModal"
+    tabindex="-1"
+    aria-labelledby="deleteModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Are you sure ?</p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cancel
+          </button>
+          <a href="#" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End -->
+
+  <div class="container-fluid py-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div
+            class="card-header pb-0 d-flex align-items-center justify-content-between"
+          >
+            <h6>Promotions</h6>
+            <a
+              href=""
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              >+ Promotion</a
+            >
+          </div>
+          <div class="card-body px-0 pt-0 pb-2">
+            <div class="table-responsive p-0">
+              <table
+                id="table"
+                class="table align-items-center mb-0"
+                style="width: 100%"
+              >
+                <thead>
+                  <tr>
+                    <th
+                      class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                    >
+                      Marketer
+                    </th>
+                    <th
+                      class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                    >
+                      Discount
+                    </th>
+                    <th
+                      class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                    >
+                      Commission
+                    </th>
+                    <th class="text-secondary opacity-7"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">John Michael</h6>
+                          <p class="text-xs text-secondary mb-0">
+                            john@bestboxtv.com
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="text-center text-xs font-weight-bold mb-0">
+                        9%
+                      </p>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <p>1.5%</p>
+                    </td>
+                    <td class="align-middle">
+                      <a
+                        href="/promotions/1"
+                        class="text-secondary font-weight-bold text-xs"
+                        data-toggle="tooltip"
+                        data-original-title="Edit user"
+                      >
+                        Edit
+                      </a>
+                      <a
+                        href="javascript:;"
+                        class="mx-3 text-secondary font-weight-bold text-xs"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        Delete
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">Alexa Liras</h6>
+                          <p class="text-xs text-secondary mb-0">
+                            alexa@bestboxtv.com
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="text-center text-xs font-weight-bold mb-0">
+                        10%
+                      </p>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <p>2%</p>
+                    </td>
+                    <td class="align-middle">
+                      <a
+                        href="/promotions/1"
+                        class="text-secondary font-weight-bold text-xs"
+                        data-toggle="tooltip"
+                        data-original-title="Edit user"
+                      >
+                        Edit
+                      </a>
+                      <a
+                        href="javascript:;"
+                        class="mx-3 text-secondary font-weight-bold text-xs"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        Delete
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">Laurent Perrier</h6>
+                          <p class="text-xs text-secondary mb-0">
+                            laurent@bestboxtv.com
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="text-center text-xs font-weight-bold mb-0">
+                        12%
+                      </p>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <P>3%</P>
+                    </td>
+                    <td class="align-middle">
+                      <a
+                        href="/promotions/1"
+                        class="text-secondary font-weight-bold text-xs"
+                        data-toggle="tooltip"
+                        data-original-title="Edit user"
+                      >
+                        Edit
+                      </a>
+                      <a
+                        href="javascript:;"
+                        class="mx-3 text-secondary font-weight-bold text-xs"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        Delete
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">Michael Levi</h6>
+                          <p class="text-xs text-secondary mb-0">
+                            michael@bestboxtv.com
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="text-center text-xs font-weight-bold mb-0">
+                        10%
+                      </p>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <p>2%</p>
+                    </td>
+                    <td class="align-middle">
+                      <a
+                        href="/promotions/1"
+                        class="text-secondary font-weight-bold text-xs"
+                        data-toggle="tooltip"
+                        data-original-title="Edit user"
+                      >
+                        Edit
+                      </a>
+                      <a
+                        href="javascript:;"
+                        class="mx-3 text-secondary font-weight-bold text-xs"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        Delete
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">Richard Gran</h6>
+                          <p class="text-xs text-secondary mb-0">
+                            richard@bestboxtv.com
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="text-center text-xs font-weight-bold mb-0">
+                        9%
+                      </p>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <p>1.5%</p>
+                    </td>
+                    <td class="align-middle">
+                      <a
+                        href="/promotions/1"
+                        class="text-secondary font-weight-bold text-xs"
+                        data-toggle="tooltip"
+                        data-original-title="Edit user"
+                      >
+                        Edit
+                      </a>
+                      <a
+                        href="javascript:;"
+                        class="mx-3 text-secondary font-weight-bold text-xs"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        Delete
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">Miriam Eric</h6>
+                          <p class="text-xs text-secondary mb-0">
+                            miriam@bestboxtv.com
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="text-center text-xs font-weight-bold mb-0">
+                        10%
+                      </p>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      <p>2%</p>
+                    </td>
+                    <td class="align-middle">
+                      <a
+                        href="/promotions/1"
+                        class="text-secondary font-weight-bold text-xs"
+                        data-toggle="tooltip"
+                        data-original-title="Edit user"
+                      >
+                        Edit
+                      </a>
+                      <a
+                        href="javascript:;"
+                        class="mx-3 text-secondary font-weight-bold text-xs"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                      >
+                        Delete
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

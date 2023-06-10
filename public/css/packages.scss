@@ -1,0 +1,31 @@
+.main-hero {
+    height: 50vh;
+    background: url("../images/carte-credit-ordinateur-portable-payant-achats-ligne\ 1.png");
+    background-position-x: 40%;
+    background-position-y: 50%;
+    animation: none;
+    
+    background-size: cover;
+    color: white;
+  
+    .content-shadow {
+      background: linear-gradient(
+        111.13deg,
+        rgba(1, 36, 39, 0.57) 15.08%,
+        rgba(31, 45, 68, 0.71) 50.85%,
+        rgba(20, 35, 59, 0.67) 99.58%
+      );
+    }
+  
+    .hero-content{
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      h1{
+          font-size: 3rem;
+      }
+    }
+  }
+  

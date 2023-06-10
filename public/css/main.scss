@@ -1,0 +1,1054 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  min-height: 100vh;
+}
+
+.custom-wrapper {
+  padding: 0 3em;
+}
+
+.main-hero {
+  width: 100%;
+  height: 100vh;
+  animation: heroCaroussel 20s ease-in-out infinite;
+  background-size: contain;
+  color: white;
+
+  .content-shadow {
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(
+      111.13deg,
+      rgba(88, 201, 210, 0.46) -5.08%,
+      rgba(38, 65, 108, 0.71) 50.85%,
+      rgba(38, 65, 108, 0.67) 99.58%
+    );
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  header {
+    margin-top: 1em;
+  }
+
+  header a,
+  .more-details a {
+    color: white;
+  }
+}
+
+.support {
+  color: white;
+  display: block;
+  text-align: center;
+  justify-content: space-between;
+  padding-bottom: 2em;
+
+  a {
+    color: inherit;
+    font-weight: bold;
+  }
+
+  i{
+    color: #26416c;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      list-style-type: none;
+
+      a {
+        background: white;
+        width: 100px;
+        height: 100px;
+        padding: 1em;
+        margin: 1em;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+header {
+  padding: 1.5em 2.5em 2em;
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    width: 8rem;
+  }
+
+  nav {
+    display: flex;
+    z-index: 999;
+    flex-direction: column;
+    background: #26416c;
+    position: fixed;
+    transform: translateX(100%);
+    transition: .5s ease-in-out;
+    right: 0;
+    top: 0;
+    width: 50%;
+    float: right;
+    height: 100vh;
+
+    .reveal {
+      transform: translateX(0);
+    }
+
+    .fa-xmark {
+      margin: 2em 0 0 1em;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 6em;
+      text-transform: uppercase;
+
+      a {
+        color: black;
+        padding: 0.75em 2em;
+        display: block;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.212);
+        }
+      }
+
+      .start {
+        margin: 2em 1em 0 1em;
+        background: #046c75;
+        border-radius: 50px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.hero-content {
+  .small-intro {
+    display: flex;
+    align-items: center;
+    line-height: 1.7em;
+
+    .fa-rss {
+      margin: 10px;
+      color: #26416c;
+      padding: 1em;
+      border-radius: 50%;
+      background: white;
+    }
+
+    h1 {
+      line-height: 1.5em;
+      margin: 20px 0;
+      font-size: 1.6em;
+    }
+  }
+
+  .benefits {
+    display: flex;
+    padding: 20px 0;
+    line-height: 2em;
+    align-items: center;
+    ul li {
+      margin: 1em 1.2em;
+      list-style-image: url("../images/checked.png");
+    }
+  }
+}
+
+.more-details {
+  display: flex;
+  align-items: center;
+
+  i {
+    margin: 1.2em;
+    background: white;
+    color: #26416c;
+    padding: 1em;
+    border-radius: 50%;
+  }
+
+  a {
+    background: #26416c;
+    padding: 1em;
+  }
+
+  .details {
+    border-radius: 50px;
+  }
+}
+
+.section-title {
+  color: #046c75;
+}
+
+.heading {
+  width: 100%;
+  text-align: center;
+  margin: 1.5em 0;
+}
+
+.section-icon {
+  color: white;
+  padding: 0.5em;
+  border-radius: 50%;
+  margin: 0 1em 1em 0;
+  background: #26416c;
+}
+
+section.features {
+  .features-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .feature-item {
+      margin-bottom: 2em;
+      border: 1px solid #d5d5d5;
+      padding: 1.2em;
+      width: 19.375em;
+
+      i {
+        color: #26416c;
+      }
+
+      p {
+        text-align: justify;
+      }
+      h4 {
+        margin: 1em 0;
+      }
+    }
+  }
+
+  .description {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    i {
+      margin-right: 1em;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 1em 0;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 1.2em;
+    }
+
+    .part-1 {
+      .sub-part-2 {
+        margin: 1em 0;
+        display: flex;
+        flex-wrap: wrap;
+        img {
+          border-radius: 2%;
+        }
+      }
+    }
+
+    .part-2 {
+      position: relative;
+      color: white;
+      padding: 1em;
+      margin: 1em;
+
+      img {
+        z-index: 1;
+        border-radius: 100%;
+        width: 15em;
+      }
+
+      .orange {
+        position: absolute;
+        z-index: 2;
+        left: 58%;
+        top: -18%;
+        width: 7em;
+        height: 7em;
+        border-radius: 50%;
+        background: #fc5130;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      p {
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      .centered {
+        font-size: 1.2rem;
+        line-height: 1em;
+        font-weight: 600;
+      }
+
+      .black {
+        position: absolute;
+        left: 10%;
+        top: 70%;
+        width: 5em;
+        height: 5em;
+        border-radius: 50%;
+        background: #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+
+  .features-footer {
+    padding: 1em 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .feature-footer-item {
+      margin: 1em;
+      text-align: center;
+      font-weight: 700;
+
+      i {
+        color: #26416c;
+        margin: 0.8em;
+      }
+    }
+  }
+}
+
+section.search {
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  .heading {
+    i {
+      background: #046c75;
+      padding: 0.7em;
+      border-radius: 50%;
+      margin: 1em;
+    }
+  }
+
+  .search-controls {
+    background: white;
+    width: 18em;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+  }
+
+  .search-input {
+    border-radius: 50px;
+    width: 19em;
+    height: 3em;
+    border: none;
+    padding: 1.2em;
+  }
+
+  .search-submit {
+    border-radius: 50px;
+    padding: 1em;
+    width: 7em;
+    border: none;
+    background: #26416c;
+    color: white;
+  }
+}
+
+section.pricing {
+  display: block;
+
+  .promo {
+    background: #c3dac3;
+    padding: 0.3em 0;
+    border-radius: 75px 75px;
+    position: absolute;
+    width: 134px;
+    left: 50%;
+  }
+
+  .pricing-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .pricing-item {
+      position: relative;
+      width: 25em;
+      text-align: center;
+      padding: 1.4em 2em;
+      border: 1px solid #d5d5d5;
+      margin: 1.3em 0;
+
+      .desc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        i {
+          width: 46px;
+          height: 28px;
+          color: #26416c;
+        }
+
+        p {
+          font-weight: 700;
+        }
+      }
+
+      ul {
+        margin: 3em 0;
+        display: flex;
+        flex-direction: column;
+        li {
+          text-align: left;
+          list-style-image: url("../images/icon-park-solid_check-one.png");
+        }
+      }
+
+      span.price {
+        font-weight: 700;
+        font-size: 1.9em;
+        line-height: 49px; /* identical to box height */
+        text-align: center;
+        color: #fc5130;
+      }
+
+      .buy-btn {
+        margin: 2em;
+        background: #26416c;
+        border-radius: 50px;
+        padding: 0.6em;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+section.map {
+  margin: 1em 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-align: center;
+
+  img {
+    width: 100%;
+  }
+
+  .content {
+    margin: 1em 0;
+
+    p {
+      text-align: justify;
+    }
+
+    b {
+      color: #046c75;
+    }
+  }
+}
+
+section.testimonials {
+  text-align: center;
+
+  .part-1 {
+    background: url("../images/japanese-spouses-using-tablet-browsing-internet-sitting-on-couch-indoor\ 1.png");
+    background-position-x: 50%;
+  }
+
+  .mask {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5em 2.5em;
+    background: linear-gradient(
+      180.88deg,
+      rgba(68, 58, 89, 0.76) -13.15%,
+      rgba(0, 0, 0, 0.407444) 129.74%,
+      rgba(0, 0, 0, 0.33) 161.13%
+    );
+
+    i {
+      background: #26416c;
+      padding: 0.5em;
+      border-radius: 50%;
+    }
+  }
+
+  .part-2 {
+    padding: 1em 2.5em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .rating {
+      color: #ffce31;
+    }
+
+    .testimonial {
+      box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.21);
+      border-radius: 20px;
+      padding: 1em;
+      margin: 1em 0;
+      width: 25em;
+
+      .identity {
+        margin: 0.5em 0;
+      }
+
+      .content {
+        margin: 0.5em 0;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+section.news {
+  .heading {
+    display: flex;
+    justify-content: space-between;
+
+    .section-icon {
+      margin-left: 0 !important;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      background: #046c75;
+      padding: 0.5em;
+      border-radius: 50px;
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .news {
+    width: 25.25em;
+    height: 38.563em;
+    max-height: 38.563em;
+    margin: 1em 0;
+  }
+
+  .news-summary {
+    background: #e8e8e8;
+    border-radius: 15px;
+    padding: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  .datetime {
+    margin: 1em 0;
+    color: #797878;
+  }
+
+  .post {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    img {
+      width: 100%;
+      margin-top: 0;
+      border-radius: 10px;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .footer {
+      margin-top: 1em;
+      a {
+        color: #fc5130;
+      }
+    }
+  }
+}
+
+footer {
+  color: #c3dac3;
+  padding: 1em 2.5em;
+  background: #011516;
+  text-align: center;
+
+  .part-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .brand-and-socials {
+      img {
+        width: 8rem;
+      }
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          list-style-type: none;
+          a {
+            color: #c3dac3;
+          }
+        }
+      }
+    }
+
+    .newsletter {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      .letter {
+        background: white;
+        width: 19em;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+
+        .email {
+          width: 16em;
+          height: 2em;
+          border: none;
+          padding: 0.7em;
+        }
+
+        .submit-btn {
+          padding: 1em;
+          width: 7em;
+          border: none;
+          background: #046c75;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .brand-and-socials,
+  p {
+    margin: 1em 0;
+  }
+
+  .part-2 {
+    li,
+    div i {
+      margin: 0.5em 0;
+    }
+    .sub-part-1 {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      div {
+        margin: 1em 0;
+        text-align: left;
+      }
+
+      ul li {
+        list-style-type: none;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+
+    .sub-part-2 {
+      padding: 1em 0;
+      border-top: 1px solid #c3dac3;
+      text-align: left;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    .credits {
+      width: 100%;
+      display: flex;
+      background: black;
+    }
+  }
+}
+
+@keyframes heroCaroussel {
+  from {
+    background: url("../images/personnes-regardant-football1\ 1.png");
+  }
+  to {
+    background: url("../images/internet-time-at-home-e1615779661254\ 1.png");
+    background-position-x: 70%;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  section.pricing {
+    .pricing-items {
+      justify-content: space-evenly;
+    }
+  }
+
+  section.features {
+    .description {
+      .part-1 {
+        .sub-part-2 {
+          justify-content: space-evenly;
+        }
+      }
+    }
+
+    .features-footer {
+      justify-content: space-between;
+
+      .feature-footer-item {
+        margin: 1em;
+        text-align: center;
+        font-weight: 700;
+
+        i {
+          color: #26416c;
+          margin: 0.8em;
+        }
+      }
+    }
+  }
+
+  section.news {
+    .content {
+      justify-content: space-evenly;
+    }
+  }
+
+  section.testimonials {
+    .part-2 {
+      justify-content: space-evenly;
+    }
+  }
+}
+
+@media only screen and (min-width: 819px) {
+  footer {
+    .part-1 {
+      padding: 1em 0;
+      .newsletter {
+        text-align: left;
+        display: block;
+        .letter {
+          width: 21em;
+
+          .email {
+            width: 19em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  section.search {
+    justify-content: space-evenly;
+    align-items: center;
+
+    .heading {
+      i {
+        margin: 1em 1em 1em 0;
+      }
+    }
+
+    .heading {
+      width: 50%;
+      text-align: left;
+    }
+
+    .search-controls {
+      height: 3em;
+      align-items: center;
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .custom-wrapper {
+    padding: 0 10em;
+  }
+  .support {
+    color: #26416c;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 1em 2.5em;
+
+    a {
+      color: inherit;
+      font-weight: bold;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        list-style-type: none;
+
+        a {
+          background: white;
+          padding: 0.3em;
+          margin: 1em;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+
+    .menu {
+      display: none;
+    }
+
+    img {
+      width: 8rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      z-index: auto;
+      flex-direction: row;
+      background: transparent;
+      position: relative;
+      transform: translateX(0);
+      right: 0;
+      top: 0;
+      width: 70%;
+      height: auto;
+
+      .fa-xmark {
+        display: none;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        padding: 0;
+        margin-top: 0;
+        text-transform: uppercase;
+
+        a {
+          color: black;
+          padding: 0.75em 0.75em;
+          display: block;
+
+          &:hover {
+            background: rgba(0, 0, 0, 0.212);
+          }
+        }
+
+        .start {
+          margin: 0 1em 0 1em;
+          background: #26416c;
+
+          &:hover {
+            background: #26416c;
+            border-radius: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  section.features {
+    .description {
+      .part-1 {
+        .sub-part-2 {
+          justify-content: space-between;
+        }
+      }
+
+      .part-2{
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  section.pricing {
+    .pricing-items {
+      justify-content: space-between;
+    }
+  }
+
+  section.search {
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    flex-wrap: wrap;
+  
+    .heading {
+      i {
+        background: #046c75;
+        padding: 0.7em;
+        border-radius: 50%;
+        margin: 1em;
+      }
+    }
+  
+    .search-controls {
+      background: white;
+      width: 22em;
+      border-radius: 50px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1em;
+    }
+  
+    .search-input {
+      border-radius: 50px;
+      width: 19em;
+      height: 3em;
+      border: none;
+      padding: 1.2em;
+    }
+  
+    .search-submit {
+      border-radius: 50px;
+      padding: 1em;
+      width: 7em;
+      border: none;
+      background: #26416c;
+      color: white;
+    }
+  }
+
+  section.news {
+    .content {
+      justify-content: space-between;
+    }
+  }
+}
+
+@media only screen and (min-width: 1560px) {
+  section.testimonials {
+    position: relative;
+    margin-bottom: 10em;
+    .part-1 {
+      background: url("../images/japanese-spouses-using-tablet-browsing-internet-sitting-on-couch-indoor\ 1.png");
+      background-position-x: 50%;
+      height: 25em;
+    }
+
+    .mask {
+      height: 20em;
+    }
+
+    .part-2 {
+      position: absolute;
+      top: 40%;
+      display: flex;
+      justify-content: space-between;
+      .rating {
+        color: #ffce31;
+      }
+
+      .testimonial {
+        background: white;
+        margin: 1em 1em;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1278px) {
+  section.features {
+    .description {
+      flex-wrap: nowrap;
+
+      .part-1 {
+        .sub-part-2 {
+          margin: 1em 0;
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+        }
+      }
+
+      .part-2 {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 20em;
+        }
+
+        .orange {
+          left: 58%;
+          top: 0;
+        }
+
+        .black {
+          z-index: 2;
+          left: 24%;
+        }
+      }
+    }
+  }
+}

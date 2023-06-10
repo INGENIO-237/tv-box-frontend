@@ -1,0 +1,860 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  min-height: 100vh;
+}
+
+.custom-wrapper {
+  padding: 0 3em;
+}
+
+.main-hero {
+  width: 100%;
+  height: 100vh;
+  animation: heroCaroussel 20s ease-in-out infinite;
+  background-size: contain;
+  color: white;
+}
+.main-hero .content-shadow {
+  width: inherit;
+  height: inherit;
+  background: linear-gradient(111.13deg, rgba(88, 201, 210, 0.46) -5.08%, rgba(38, 65, 108, 0.71) 50.85%, rgba(38, 65, 108, 0.67) 99.58%);
+}
+.main-hero a {
+  text-decoration: none;
+}
+.main-hero header {
+  margin-top: 1em;
+}
+.main-hero header a,
+.main-hero .more-details a {
+  color: white;
+}
+
+.support {
+  color: white;
+  display: block;
+  text-align: center;
+  justify-content: space-between;
+  padding-bottom: 2em;
+}
+.support a {
+  color: inherit;
+  font-weight: bold;
+}
+.support i {
+  color: #26416c;
+}
+.support p {
+  margin-bottom: 1em;
+}
+.support ul {
+  display: flex;
+  justify-content: space-between;
+}
+.support ul li {
+  list-style-type: none;
+}
+.support ul li a {
+  background: white;
+  width: 100px;
+  height: 100px;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 50%;
+}
+
+header {
+  padding: 1.5em 2.5em 2em;
+  display: flex;
+  justify-content: space-between;
+}
+header img {
+  width: 8rem;
+}
+header nav {
+  display: flex;
+  z-index: 999;
+  flex-direction: column;
+  background: #26416c;
+  position: fixed;
+  transform: translateX(100%);
+  transition: 0.5s ease-in-out;
+  right: 0;
+  top: 0;
+  width: 50%;
+  float: right;
+  height: 100vh;
+}
+header nav .reveal {
+  transform: translateX(0);
+}
+header nav .fa-xmark {
+  margin: 2em 0 0 1em;
+}
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 6em;
+  text-transform: uppercase;
+}
+header nav ul a {
+  color: black;
+  padding: 0.75em 2em;
+  display: block;
+}
+header nav ul a:hover {
+  background: rgba(0, 0, 0, 0.212);
+}
+header nav ul .start {
+  margin: 2em 1em 0 1em;
+  background: #046c75;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.hero-content .small-intro {
+  display: flex;
+  align-items: center;
+  line-height: 1.7em;
+}
+.hero-content .small-intro .fa-rss {
+  margin: 10px;
+  color: #26416c;
+  padding: 1em;
+  border-radius: 50%;
+  background: white;
+}
+.hero-content .small-intro h1 {
+  line-height: 1.5em;
+  margin: 20px 0;
+  font-size: 1.6em;
+}
+.hero-content .benefits {
+  display: flex;
+  padding: 20px 0;
+  line-height: 2em;
+  align-items: center;
+}
+.hero-content .benefits ul li {
+  margin: 1em 1.2em;
+  list-style-image: url("../images/checked.png");
+}
+
+.more-details {
+  display: flex;
+  align-items: center;
+}
+.more-details i {
+  margin: 1.2em;
+  background: white;
+  color: #26416c;
+  padding: 1em;
+  border-radius: 50%;
+}
+.more-details a {
+  background: #26416c;
+  padding: 1em;
+}
+.more-details .details {
+  border-radius: 50px;
+}
+
+.section-title {
+  color: #046c75;
+}
+
+.heading {
+  width: 100%;
+  text-align: center;
+  margin: 1.5em 0;
+}
+
+.section-icon {
+  color: white;
+  padding: 0.5em;
+  border-radius: 50%;
+  margin: 0 1em 1em 0;
+  background: #26416c;
+}
+
+section.features .features-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+section.features .features-list .feature-item {
+  margin-bottom: 2em;
+  border: 1px solid #d5d5d5;
+  padding: 1.2em;
+  width: 19.375em;
+}
+section.features .features-list .feature-item i {
+  color: #26416c;
+}
+section.features .features-list .feature-item p {
+  text-align: justify;
+}
+section.features .features-list .feature-item h4 {
+  margin: 1em 0;
+}
+section.features .description {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+section.features .description i {
+  margin-right: 1em;
+}
+section.features .description h1 {
+  text-align: center;
+  margin: 1em 0;
+}
+section.features .description p {
+  text-align: justify;
+  margin-bottom: 1.2em;
+}
+section.features .description .part-1 .sub-part-2 {
+  margin: 1em 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+section.features .description .part-1 .sub-part-2 img {
+  border-radius: 2%;
+}
+section.features .description .part-2 {
+  position: relative;
+  color: white;
+  padding: 1em;
+  margin: 1em;
+}
+section.features .description .part-2 img {
+  z-index: 1;
+  border-radius: 100%;
+  width: 15em;
+}
+section.features .description .part-2 .orange {
+  position: absolute;
+  z-index: 2;
+  left: 58%;
+  top: -18%;
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+  background: #fc5130;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.features .description .part-2 p {
+  text-align: center;
+  font-size: 1rem;
+}
+section.features .description .part-2 .centered {
+  font-size: 1.2rem;
+  line-height: 1em;
+  font-weight: 600;
+}
+section.features .description .part-2 .black {
+  position: absolute;
+  left: 10%;
+  top: 70%;
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.features .features-footer {
+  padding: 1em 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+section.features .features-footer .feature-footer-item {
+  margin: 1em;
+  text-align: center;
+  font-weight: 700;
+}
+section.features .features-footer .feature-footer-item i {
+  color: #26416c;
+  margin: 0.8em;
+}
+
+section.search {
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+section.search .heading i {
+  background: #046c75;
+  padding: 0.7em;
+  border-radius: 50%;
+  margin: 1em;
+}
+section.search .search-controls {
+  background: white;
+  width: 18em;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+section.search .search-input {
+  border-radius: 50px;
+  width: 19em;
+  height: 3em;
+  border: none;
+  padding: 1.2em;
+}
+section.search .search-submit {
+  border-radius: 50px;
+  padding: 1em;
+  width: 7em;
+  border: none;
+  background: #26416c;
+  color: white;
+}
+
+section.pricing {
+  display: block;
+}
+section.pricing .promo {
+  background: #c3dac3;
+  padding: 0.3em 0;
+  border-radius: 75px 75px;
+  position: absolute;
+  width: 134px;
+  left: 50%;
+}
+section.pricing .pricing-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+section.pricing .pricing-items .pricing-item {
+  position: relative;
+  width: 25em;
+  text-align: center;
+  padding: 1.4em 2em;
+  border: 1px solid #d5d5d5;
+  margin: 1.3em 0;
+}
+section.pricing .pricing-items .pricing-item .desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section.pricing .pricing-items .pricing-item .desc i {
+  width: 46px;
+  height: 28px;
+  color: #26416c;
+}
+section.pricing .pricing-items .pricing-item .desc p {
+  font-weight: 700;
+}
+section.pricing .pricing-items .pricing-item ul {
+  margin: 3em 0;
+  display: flex;
+  flex-direction: column;
+}
+section.pricing .pricing-items .pricing-item ul li {
+  text-align: left;
+  list-style-image: url("../images/icon-park-solid_check-one.png");
+}
+section.pricing .pricing-items .pricing-item span.price {
+  font-weight: 700;
+  font-size: 1.9em;
+  line-height: 49px; /* identical to box height */
+  text-align: center;
+  color: #fc5130;
+}
+section.pricing .pricing-items .pricing-item .buy-btn {
+  margin: 2em;
+  background: #26416c;
+  border-radius: 50px;
+  padding: 0.6em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+section.map {
+  margin: 1em 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-align: center;
+}
+section.map img {
+  width: 100%;
+}
+section.map .content {
+  margin: 1em 0;
+}
+section.map .content p {
+  text-align: justify;
+}
+section.map .content b {
+  color: #046c75;
+}
+
+section.testimonials {
+  text-align: center;
+}
+section.testimonials .part-1 {
+  background: url("../images/japanese-spouses-using-tablet-browsing-internet-sitting-on-couch-indoor 1.png");
+  background-position-x: 50%;
+}
+section.testimonials .mask {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5em 2.5em;
+  background: linear-gradient(180.88deg, rgba(68, 58, 89, 0.76) -13.15%, rgba(0, 0, 0, 0.407444) 129.74%, rgba(0, 0, 0, 0.33) 161.13%);
+}
+section.testimonials .mask i {
+  background: #26416c;
+  padding: 0.5em;
+  border-radius: 50%;
+}
+section.testimonials .part-2 {
+  padding: 1em 2.5em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+section.testimonials .part-2 .rating {
+  color: #ffce31;
+}
+section.testimonials .part-2 .testimonial {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.21);
+  border-radius: 20px;
+  padding: 1em;
+  margin: 1em 0;
+  width: 25em;
+}
+section.testimonials .part-2 .testimonial .identity {
+  margin: 0.5em 0;
+}
+section.testimonials .part-2 .testimonial .content {
+  margin: 0.5em 0;
+  text-align: justify;
+}
+
+section.news .heading {
+  display: flex;
+  justify-content: space-between;
+}
+section.news .heading .section-icon {
+  margin-left: 0 !important;
+}
+section.news .heading a {
+  text-decoration: none;
+  color: white;
+  background: #046c75;
+  padding: 0.5em;
+  border-radius: 50px;
+}
+section.news .content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+section.news .news {
+  width: 25.25em;
+  height: 38.563em;
+  max-height: 38.563em;
+  margin: 1em 0;
+}
+section.news .news-summary {
+  background: #e8e8e8;
+  border-radius: 15px;
+  padding: 1em;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+section.news .news-summary a {
+  text-decoration: none;
+  color: #000;
+}
+section.news .datetime {
+  margin: 1em 0;
+  color: #797878;
+}
+section.news .post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+section.news .post img {
+  width: 100%;
+  margin-top: 0;
+  border-radius: 10px;
+}
+section.news .post a {
+  color: #000;
+  text-decoration: none;
+}
+section.news .post .footer {
+  margin-top: 1em;
+}
+section.news .post .footer a {
+  color: #fc5130;
+}
+
+footer {
+  color: #c3dac3;
+  padding: 1em 2.5em;
+  background: #011516;
+  text-align: center;
+}
+footer .part-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+footer .part-1 .brand-and-socials img {
+  width: 8rem;
+}
+footer .part-1 .brand-and-socials ul {
+  display: flex;
+  justify-content: space-between;
+}
+footer .part-1 .brand-and-socials ul li {
+  list-style-type: none;
+}
+footer .part-1 .brand-and-socials ul li a {
+  color: #c3dac3;
+}
+footer .part-1 .newsletter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+footer .part-1 .newsletter .letter {
+  background: white;
+  width: 19em;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+footer .part-1 .newsletter .letter .email {
+  width: 16em;
+  height: 2em;
+  border: none;
+  padding: 0.7em;
+}
+footer .part-1 .newsletter .letter .submit-btn {
+  padding: 1em;
+  width: 7em;
+  border: none;
+  background: #046c75;
+  color: white;
+}
+footer .brand-and-socials,
+footer p {
+  margin: 1em 0;
+}
+footer .part-2 li,
+footer .part-2 div i {
+  margin: 0.5em 0;
+}
+footer .part-2 .sub-part-1 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+footer .part-2 .sub-part-1 div {
+  margin: 1em 0;
+  text-align: left;
+}
+footer .part-2 .sub-part-1 ul li {
+  list-style-type: none;
+}
+footer .part-2 .sub-part-1 ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+footer .part-2 .sub-part-2 {
+  padding: 1em 0;
+  border-top: 1px solid #c3dac3;
+  text-align: left;
+}
+footer .part-2 .sub-part-2 a {
+  text-decoration: none;
+  color: inherit;
+}
+footer .part-2 .credits {
+  width: 100%;
+  display: flex;
+  background: black;
+}
+
+@keyframes heroCaroussel {
+  from {
+    background: url("../images/personnes-regardant-football1 1.png");
+  }
+  to {
+    background: url("../images/internet-time-at-home-e1615779661254 1.png");
+    background-position-x: 70%;
+  }
+}
+@media only screen and (min-width: 500px) {
+  section.pricing .pricing-items {
+    justify-content: space-evenly;
+  }
+  section.features .description .part-1 .sub-part-2 {
+    justify-content: space-evenly;
+  }
+  section.features .features-footer {
+    justify-content: space-between;
+  }
+  section.features .features-footer .feature-footer-item {
+    margin: 1em;
+    text-align: center;
+    font-weight: 700;
+  }
+  section.features .features-footer .feature-footer-item i {
+    color: #26416c;
+    margin: 0.8em;
+  }
+  section.news .content {
+    justify-content: space-evenly;
+  }
+  section.testimonials .part-2 {
+    justify-content: space-evenly;
+  }
+}
+@media only screen and (min-width: 819px) {
+  footer .part-1 {
+    padding: 1em 0;
+  }
+  footer .part-1 .newsletter {
+    text-align: left;
+    display: block;
+  }
+  footer .part-1 .newsletter .letter {
+    width: 21em;
+  }
+  footer .part-1 .newsletter .letter .email {
+    width: 19em;
+  }
+}
+@media only screen and (min-width: 900px) {
+  section.search {
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  section.search .heading i {
+    margin: 1em 1em 1em 0;
+  }
+  section.search .heading {
+    width: 50%;
+    text-align: left;
+  }
+  section.search .search-controls {
+    height: 3em;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .custom-wrapper {
+    padding: 0 10em;
+  }
+  .support {
+    color: #26416c;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 1em 2.5em;
+  }
+  .support a {
+    color: inherit;
+    font-weight: bold;
+  }
+  .support p {
+    margin-bottom: 1em;
+  }
+  .support ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  .support ul li {
+    list-style-type: none;
+  }
+  .support ul li a {
+    background: white;
+    padding: 0.3em;
+    margin: 1em;
+    border-radius: 50%;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  header .menu {
+    display: none;
+  }
+  header img {
+    width: 8rem;
+  }
+  header nav {
+    display: flex;
+    justify-content: flex-end;
+    z-index: auto;
+    flex-direction: row;
+    background: transparent;
+    position: relative;
+    transform: translateX(0);
+    right: 0;
+    top: 0;
+    width: 70%;
+    height: auto;
+  }
+  header nav .fa-xmark {
+    display: none;
+  }
+  header nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0;
+    text-transform: uppercase;
+  }
+  header nav ul a {
+    color: black;
+    padding: 0.75em 0.75em;
+    display: block;
+  }
+  header nav ul a:hover {
+    background: rgba(0, 0, 0, 0.212);
+  }
+  header nav ul .start {
+    margin: 0 1em 0 1em;
+    background: #26416c;
+  }
+  header nav ul .start:hover {
+    background: #26416c;
+    border-radius: 50px;
+  }
+  section.features .description .part-1 .sub-part-2 {
+    justify-content: space-between;
+  }
+  section.features .description .part-2 {
+    display: flex;
+    justify-content: flex-end;
+  }
+  section.pricing .pricing-items {
+    justify-content: space-between;
+  }
+  section.search {
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  section.search .heading i {
+    background: #046c75;
+    padding: 0.7em;
+    border-radius: 50%;
+    margin: 1em;
+  }
+  section.search .search-controls {
+    background: white;
+    width: 22em;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+  }
+  section.search .search-input {
+    border-radius: 50px;
+    width: 19em;
+    height: 3em;
+    border: none;
+    padding: 1.2em;
+  }
+  section.search .search-submit {
+    border-radius: 50px;
+    padding: 1em;
+    width: 7em;
+    border: none;
+    background: #26416c;
+    color: white;
+  }
+  section.news .content {
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1560px) {
+  section.testimonials {
+    position: relative;
+    margin-bottom: 10em;
+  }
+  section.testimonials .part-1 {
+    background: url("../images/japanese-spouses-using-tablet-browsing-internet-sitting-on-couch-indoor 1.png");
+    background-position-x: 50%;
+    height: 25em;
+  }
+  section.testimonials .mask {
+    height: 20em;
+  }
+  section.testimonials .part-2 {
+    position: absolute;
+    top: 40%;
+    display: flex;
+    justify-content: space-between;
+  }
+  section.testimonials .part-2 .rating {
+    color: #ffce31;
+  }
+  section.testimonials .part-2 .testimonial {
+    background: white;
+    margin: 1em 1em;
+  }
+}
+@media only screen and (min-width: 1278px) {
+  section.features .description {
+    flex-wrap: nowrap;
+  }
+  section.features .description .part-1 .sub-part-2 {
+    margin: 1em 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  section.features .description .part-2 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section.features .description .part-2 img {
+    width: 20em;
+  }
+  section.features .description .part-2 .orange {
+    left: 58%;
+    top: 0;
+  }
+  section.features .description .part-2 .black {
+    z-index: 2;
+    left: 24%;
+  }
+}/*# sourceMappingURL=main.css.map */

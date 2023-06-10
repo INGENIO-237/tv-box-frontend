@@ -1,0 +1,21 @@
+.main-hero {
+  height: 20vh;
+  background: url("../images/micah-williams-lmFJOx7hPc4-unsplash.jpg");
+  background-position-y: 60%;
+  background-position-x: 60%;
+}
+
+.become-marketer form {
+  box-shadow: none;
+}
+
+form {
+  margin-top: 5em;
+  margin-bottom: 45vh;
+}
+form a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: right;
+}/*# sourceMappingURL=auth.css.map */

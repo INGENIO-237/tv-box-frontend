@@ -1,0 +1,91 @@
+.main-hero {
+  height: 50vh;
+  background: url("../images/scott-graham-5fNmWej4tAA-unsplash.jpg");
+  background-position-x: 45%;
+  background-position-y: 50%;
+  animation: none;
+  background-size: cover;
+  color: white;
+}
+.main-hero .content-shadow {
+  background: linear-gradient(111.13deg, rgba(1, 36, 39, 0.57) 15.08%, rgba(31, 45, 68, 0.71) 50.85%, rgba(20, 35, 59, 0.67) 99.58%);
+}
+.main-hero .content-shadow .support {
+  color: white;
+}
+.main-hero .content-shadow .support i {
+  color: #26416c;
+}
+.main-hero .hero-content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-hero .hero-content h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+section.become-marketer {
+  margin: 2em 0;
+}
+section.become-marketer form {
+  background: white;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.21);
+  border-radius: 20px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+section.become-marketer form h2 {
+  text-align: center;
+}
+section.become-marketer form .form-group {
+  margin: 1em 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+section.become-marketer form .form-group .form-control {
+  width: 90%;
+}
+section.become-marketer form .form-group .form-control,
+section.become-marketer form .form-group .form-btn {
+  padding: 1em;
+  border-radius: 20px;
+  border: 1px solid #e1e1e1;
+}
+section.become-marketer form .form-group .form-btn {
+  background: #046c75;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 970px) {
+  section.become-marketer form {
+    width: 32.813em;
+  }
+  section.become-marketer form .form-group {
+    align-items: center;
+  }
+  section.become-marketer form .form-group .form-control {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 850px) {
+  section.become-marketer {
+    display: flex;
+    justify-content: center;
+  }
+  section.become-marketer form {
+    width: 26.813em;
+  }
+  section.become-marketer form .form-group .form-control {
+    width: 60%;
+  }
+}/*# sourceMappingURL=commercial.css.map */
