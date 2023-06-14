@@ -102,7 +102,7 @@ const updateProduct = async (req, res) => {
           nom_art: title,
           desc_art: description,
           prix_art: price,
-          image_art: imgPath.toString(),
+          image_art: imgPath,
         })
         .then((response) => {
           res.redirect("/products");
@@ -116,9 +116,21 @@ const updateProduct = async (req, res) => {
     });
 };
 
+const deleteProduct = async (req, res) => {
+  axios
+    .delete(process.env.BACKEND_ENDPOINT + "/articles/" + req.params.id)
+    .then((response) => {
+      res.redirect("/products");
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
 module.exports = {
   getAllProducts,
   createProduct,
   getSingleProduct,
   updateProduct,
+  deleteProduct
 };
