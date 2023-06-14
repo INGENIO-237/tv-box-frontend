@@ -4,6 +4,7 @@ const {
   getAllProducts,
   createProduct,
   getSingleProduct,
+  updateProduct,
 } = require("../../controllers/admin/products");
 
 // Multer storage engine
@@ -21,5 +22,7 @@ router.get("/", getAllProducts);
 router.post("/", upload.single("image"), createProduct);
 
 router.get("/:id", getSingleProduct);
+
+router.post("/:id", upload.single("image"), updateProduct);
 
 module.exports = router;

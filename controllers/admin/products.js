@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { newPath } = require("../../utils/article-image");
+const { newPath, deleteImg } = require("../../utils/article-image");
 const { imagePath } = require("../../utils/image-path");
 require("dotenv").config();
 
@@ -78,8 +78,47 @@ const getSingleProduct = (req, res) => {
     });
 };
 
-// const updateProduct = (req, res) => {
-//   const { title, category, description, price } = req.body;
-// };
+const updateProduct = async (req, res) => {
+  const { title, category, description, price } = req.body;
 
-module.exports = { getAllProducts, createProduct, getSingleProduct };
+  let imgPath;
+
+  if (req.file != undefined) {
+    imgPath = await newPath(req.file);
+  }
+
+  axios
+    .get(process.env.BACKEND_ENDPOINT + "/articles/" + req.params.id)
+    .then((response) => {
+      const product = response.data;
+
+      if (req.file != undefined) {
+        deleteImg(product);
+      }
+
+      axios
+        .put(process.env.BACKEND_ENDPOINT + "/articles/" + req.params.id, {
+          id_cat: category,
+          nom_art: title,
+          desc_art: description,
+          prix_art: price,
+          image_art: imgPath.toString(),
+        })
+        .then((response) => {
+          res.redirect("/products");
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+module.exports = {
+  getAllProducts,
+  createProduct,
+  getSingleProduct,
+  updateProduct,
+};

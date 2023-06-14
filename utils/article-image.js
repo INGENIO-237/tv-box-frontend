@@ -17,8 +17,8 @@ const newPath = async (file) => {
 };
 
 // Deletes old article's image
-const deleteImg = (result) => {
-  fs.unlink(result[0].image_art, (error) => {
+const deleteImg = (product) => {
+  fs.unlink(product.image_art, (error) => {
     if (error) throw error;
   });
 };
