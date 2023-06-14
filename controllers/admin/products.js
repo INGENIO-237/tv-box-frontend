@@ -1,5 +1,6 @@
 const axios = require("axios");
 const { newPath } = require("../../utils/article-image");
+const { imagePath } = require("../../utils/image-path");
 require("dotenv").config();
 
 const getAllProducts = (req, res) => {
@@ -10,10 +11,7 @@ const getAllProducts = (req, res) => {
 
       // Arrange image path
       products.forEach((product) => {
-        const splittedImagePath = product.image_art.split("\\");
-        const slicedImagePath = splittedImagePath.slice(1);
-        const joinedImagePath = slicedImagePath.join("/");
-        product.image_art = joinedImagePath;
+        product.image_art = imagePath(product);
       });
 
       axios
@@ -56,4 +54,32 @@ const createProduct = async (req, res) => {
     });
 };
 
-module.exports = { getAllProducts, createProduct };
+const getSingleProduct = (req, res) => {
+  axios
+    .get(process.env.BACKEND_ENDPOINT + "/articles/" + req.params.id)
+    .then((response) => {
+      const product = response.data;
+      product.image_art = imagePath(product);
+
+      axios
+        .get(process.env.BACKEND_ENDPOINT + "/categories")
+        .then((response) => {
+          const categories = response.data;
+
+          res.render("pages/admin/edit-product", {
+            layout: "dashboard-layout.ejs",
+            product: product,
+            categories: categories,
+          });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    });
+};
+
+// const updateProduct = (req, res) => {
+//   const { title, category, description, price } = req.body;
+// };
+
+module.exports = { getAllProducts, createProduct, getSingleProduct };

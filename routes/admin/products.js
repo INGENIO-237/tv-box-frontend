@@ -3,6 +3,7 @@ const { checkLoggedIn } = require("../../middlewares/user-session");
 const {
   getAllProducts,
   createProduct,
+  getSingleProduct,
 } = require("../../controllers/admin/products");
 
 // Multer storage engine
@@ -19,8 +20,6 @@ router.get("/", getAllProducts);
 
 router.post("/", upload.single("image"), createProduct);
 
-router.get("/:id", (req, res) => {
-  res.render("pages/admin/edit-product", { layout: "dashboard-layout.ejs" });
-});
+router.get("/:id", getSingleProduct);
 
 module.exports = router;

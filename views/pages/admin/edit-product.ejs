@@ -5,6 +5,8 @@
     <div class="mb-3">
       <input
         type="text"
+        name="title"
+        value="<%= product.nom_art %>"
         class="form-control"
         placeholder="Title"
         aria-label="Title"
@@ -14,20 +16,28 @@
     <label>Category</label>
     <div class="mb-3">
       <select
+        name="category"
         class="form-control"
         placeholder="Category"
         aria-label="Category"
         aria-describedby="category-addon"
       >
-        <option value="">Computer</option>
-        <option value="">Television</option>
+        <option value="<%= product.id_cat %>">
+          <%= product.libelle_cat %>
+        </option>
+        <% for(let i = 0; i < categories.length; i++){ %> <%
+        if(categories[i].id_cat != product.id_cat){ %>
+        <option value="<%= categories[i].id_cat %>">
+          <%= categories[i].libelle_cat %>
+        </option>
+        <% } %> <% } %>
       </select>
     </div>
     <label>Description</label>
     <div class="mb-3">
       <textarea
-        name=""
-        id=""
+        name="description"
+        value="<%= product.desc_art %>"
         cols="30"
         rows="4"
         class="form-control"
@@ -39,6 +49,8 @@
     <label>Price</label>
     <div class="mb-3">
       <input
+        name="price"
+        value="<%= product.prix_art %>"
         type="text"
         class="form-control"
         placeholder="Price"
@@ -49,6 +61,7 @@
     <label>Image</label>
     <div class="mb-3">
       <input
+        name="image"
         type="file"
         accept=".png,.jpg,.jpeg"
         class="form-control"
