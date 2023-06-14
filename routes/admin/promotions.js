@@ -1,12 +1,25 @@
+const {
+  getAllPromotions,
+  getSinglePromotion,
+  updatePromotion,
+  createPromotion,
+  deletePromotion,
+} = require("../../controllers/admin/promotions");
+const { checkLoggedIn } = require("../../middlewares/user-session");
+
 const router = require("express").Router();
 
-// Promotions
-router.get("/", (req, res) => {
-  res.render("pages/admin/promotions", { layout: 'dashboard-layout.ejs' });
-});
+router.use(checkLoggedIn);
 
-router.get("/:id", (req, res) => {
-  res.render("pages/admin/edit-promotion", { layout: 'dashboard-layout.ejs' });
-});
+// Marketers
+router.get("/", getAllPromotions);
+
+router.post("/", createPromotion);
+
+router.get("/:id", getSinglePromotion);
+
+router.post("/:id", updatePromotion);
+
+router.get("/delete/:id", deletePromotion);
 
 module.exports = router;

@@ -1,11 +1,15 @@
+const { getAllPayments } = require("../../controllers/admin/payments");
+const { checkLoggedIn } = require("../../middlewares/user-session");
+
 const router = require("express").Router();
+
+router.use(checkLoggedIn);
+
 // Payments
-router.get("/", (req, res) => {
-  res.render("pages/admin/payments", { layout: 'dashboard-layout.ejs' });
-});
+router.get("/", getAllPayments);
 
 router.get("/:id", (req, res) => {
-  res.render("pages/admin/payment-details", { layout: 'dashboard-layout.ejs' });
+  res.render("pages/admin/payment-details", { layout: "dashboard-layout.ejs" });
 });
 
 module.exports = router;

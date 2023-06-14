@@ -1,12 +1,20 @@
 const router = require("express").Router();
+const axios = require("axios");
+const { checkLoggedIn } = require("../../middlewares/user-session");
+const {
+  getAllProducts,
+  createProduct,
+} = require("../../controllers/admin/products");
+
+router.use(checkLoggedIn);
 
 // Products
-router.get("/", (req, res) => {
-  res.render("pages/admin/products", { layout: 'dashboard-layout.ejs' });
-});
+router.get("/", getAllProducts);
+
+router.post("/", createProduct);
 
 router.get("/:id", (req, res) => {
-  res.render("pages/admin/edit-product", { layout: 'dashboard-layout.ejs' });
+  res.render("pages/admin/edit-product", { layout: "dashboard-layout.ejs" });
 });
 
 module.exports = router;

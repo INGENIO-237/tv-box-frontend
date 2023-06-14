@@ -1,12 +1,25 @@
+const {
+  getAllMarketers,
+  createMarketer,
+  getSingleMarketer,
+  updateMarketer,
+  deleteMarketer,
+} = require("../../controllers/admin/marketers");
+const { checkLoggedIn } = require("../../middlewares/user-session");
+
 const router = require("express").Router();
 
-// Marketers
-router.get("/", (req, res) => {
-  res.render("pages/admin/marketers", { layout: "dashboard-layout.ejs" });
-});
+router.use(checkLoggedIn);
 
-router.get("/:id", (req, res) => {
-  res.render("pages/admin/edit-marketer", { layout: "dashboard-layout.ejs" });
-});
+// Marketers
+router.get("/", getAllMarketers);
+
+router.post("/", createMarketer);
+
+router.get("/:id", getSingleMarketer);
+
+router.post("/:id", updateMarketer);
+
+router.get("/delete/:id", deleteMarketer)
 
 module.exports = router;

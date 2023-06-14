@@ -1,4 +1,4 @@
-const { getAllArticlesHandler } = require("../controllers/article");
+const { getAllArticlesHandler } = require("../controllers/admin/article");
 
 const router = require("express").Router();
 

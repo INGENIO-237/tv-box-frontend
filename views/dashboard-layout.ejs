@@ -463,9 +463,23 @@
             id="navbar"
           >
             <ul class="navbar-nav justify-content-end">
+              <% if(locals.user) { %>
               <li class="nav-item d-flex align-items-center">
                 <a
                   href="javascript:;"
+                  class="nav-link text-body font-weight-bold px-0"
+                >
+                  <i class="fa fa-power me-sm-1"></i>
+                  <span class="d-sm-inline d-none"
+                    >Hello, <b><%= locals.user.prenom_usr %> <%=
+                      locals.user.nom_usr %></b></span
+                  >
+                </a>
+              </li>
+              <% } %>
+              <li class="nav-item d-flex align-items-center">
+                <a
+                  href="/account/logout"
                   class="nav-link text-body font-weight-bold px-0"
                 >
                   <i class="fa fa-power me-sm-1"></i>

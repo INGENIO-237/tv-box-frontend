@@ -21,78 +21,50 @@
           ></button>
         </div>
         <div class="modal-body">
-          <form role="form">
+          <form role="form" action="" method="post">
             <label>Marketer</label>
             <div class="mb-3">
-              <select
-                class="form-control"
-                placeholder="Marketer"
-                aria-label="Marketer"
-                aria-describedby="marketer-addon"
-              >
-                <option value="">John Doe</option>
-                <option value="">Lorem</option>
+              <select name="marketer" name="marketer" class="form-control">
+                <% for(let i = 0; i < marketers.length; i++){ %>
+                  <option value="<%= marketers[i].id_usr %>"><%= marketers[i].prenom_usr %> <%= marketers[i].nom_usr %></option>
+                <% } %>
               </select>
             </div>
-            <label>Phone</label>
+            <label>Discount</label>
             <div class="mb-3">
               <input
-                type="tel"
+                name="discount"
+                type="number",
+                step="any"
                 class="form-control"
-                placeholder="Phone"
-                aria-label="Phone"
-                aria-describedby="phone-addon"
+                placeholder="Discount"
+                aria-label="discount"
+                aria-describedby="discount-addon"
               />
             </div>
-            <label>Phone</label>
+            <label>Commission</label>
             <div class="mb-3">
               <input
-                type="tel"
+                name="commission"
+                type="number",
+                step="any"
                 class="form-control"
-                placeholder="Phone"
-                aria-label="Phone"
-                aria-describedby="phone-addon"
+                placeholder="commission"
+                aria-label="commission"
+                aria-describedby="commission-addon"
               />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-info">Save</button>
             </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Close
-          </button>
-          <button type="button" class="btn btn-info">Save</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End -->
-
-  <!-- Delete Pop up -->
-  <div
-    class="modal fade"
-    id="deleteModal"
-    tabindex="-1"
-    aria-labelledby="deleteModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body">
-          <p>Are you sure ?</p>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Cancel
-          </button>
-          <a href="#" class="btn btn-danger">Delete</a>
         </div>
       </div>
     </div>
@@ -132,6 +104,11 @@
                     <th
                       class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
                     >
+                      Code
+                    </th>
+                    <th
+                      class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                    >
                       Discount
                     </th>
                     <th
@@ -143,31 +120,38 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <% if(promotions.length > 0){ %> <% for(let i = 0; i <
+                  promotions.length; i++){ %>
                   <tr>
                     <td>
                       <div class="d-flex px-2 py-1">
                         <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">John Michael</h6>
+                          <h6 class="mb-0 text-sm"><%= promotions[i].prenom_usr %> <%= promotions[i].nom_usr %></h6>
                           <p class="text-xs text-secondary mb-0">
-                            john@bestboxtv.com
+                            <%= promotions[i].email_usr %>
                           </p>
                         </div>
                       </div>
                     </td>
                     <td>
                       <p class="text-center text-xs font-weight-bold mb-0">
-                        9%
+                        <%= promotions[i].code_prom %>
                       </p>
                     </td>
-                    <td class="align-middle text-center text-sm">
-                      <p>1.5%</p>
+                    <td>
+                      <p class="text-center text-xs font-weight-bold mb-0">
+                        <%= promotions[i].reduction_prom %>%
+                      </p>
+                    </td>
+                    <td>
+                      <p class="text-center text-xs font-weight-bold mb-0"><%= promotions[i].commission_prom %>%</p>
                     </td>
                     <td class="align-middle">
                       <a
-                        href="/promotions/1"
+                        href="/promotions/<%= promotions[i].id_usr %>"
                         class="text-secondary font-weight-bold text-xs"
                         data-toggle="tooltip"
-                        data-original-title="Edit user"
+                        data-original-title="Edit Promotion"
                       >
                         Edit
                       </a>
@@ -175,202 +159,46 @@
                         href="javascript:;"
                         class="mx-3 text-secondary font-weight-bold text-xs"
                         data-bs-toggle="modal"
-                        data-bs-target="#deleteModal"
+                        data-bs-target="#deleteModal<%= promotions[i].id_usr %>"
                       >
                         Delete
                       </a>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">Alexa Liras</h6>
-                          <p class="text-xs text-secondary mb-0">
-                            alexa@bestboxtv.com
-                          </p>
+
+                  <!-- Delete Pop up -->
+                  <div
+                    class="modal fade"
+                    id="deleteModal<%= promotions[i].id_usr %>"
+                    tabindex="-1"
+                    aria-labelledby="deleteModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <p>Are you sure ?</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >
+                            Cancel
+                          </button>
+                          <a
+                            href="/promotions/delete/<%= promotions[i].id_usr %>"
+                            class="btn btn-danger"
+                            >Delete</a
+                          >
                         </div>
                       </div>
-                    </td>
-                    <td>
-                      <p class="text-center text-xs font-weight-bold mb-0">
-                        10%
-                      </p>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <p>2%</p>
-                    </td>
-                    <td class="align-middle">
-                      <a
-                        href="/promotions/1"
-                        class="text-secondary font-weight-bold text-xs"
-                        data-toggle="tooltip"
-                        data-original-title="Edit user"
-                      >
-                        Edit
-                      </a>
-                      <a
-                        href="javascript:;"
-                        class="mx-3 text-secondary font-weight-bold text-xs"
-                        data-bs-toggle="modal"
-                        data-bs-target="#deleteModal"
-                      >
-                        Delete
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">Laurent Perrier</h6>
-                          <p class="text-xs text-secondary mb-0">
-                            laurent@bestboxtv.com
-                          </p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-center text-xs font-weight-bold mb-0">
-                        12%
-                      </p>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <P>3%</P>
-                    </td>
-                    <td class="align-middle">
-                      <a
-                        href="/promotions/1"
-                        class="text-secondary font-weight-bold text-xs"
-                        data-toggle="tooltip"
-                        data-original-title="Edit user"
-                      >
-                        Edit
-                      </a>
-                      <a
-                        href="javascript:;"
-                        class="mx-3 text-secondary font-weight-bold text-xs"
-                        data-bs-toggle="modal"
-                        data-bs-target="#deleteModal"
-                      >
-                        Delete
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">Michael Levi</h6>
-                          <p class="text-xs text-secondary mb-0">
-                            michael@bestboxtv.com
-                          </p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-center text-xs font-weight-bold mb-0">
-                        10%
-                      </p>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <p>2%</p>
-                    </td>
-                    <td class="align-middle">
-                      <a
-                        href="/promotions/1"
-                        class="text-secondary font-weight-bold text-xs"
-                        data-toggle="tooltip"
-                        data-original-title="Edit user"
-                      >
-                        Edit
-                      </a>
-                      <a
-                        href="javascript:;"
-                        class="mx-3 text-secondary font-weight-bold text-xs"
-                        data-bs-toggle="modal"
-                        data-bs-target="#deleteModal"
-                      >
-                        Delete
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">Richard Gran</h6>
-                          <p class="text-xs text-secondary mb-0">
-                            richard@bestboxtv.com
-                          </p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-center text-xs font-weight-bold mb-0">
-                        9%
-                      </p>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <p>1.5%</p>
-                    </td>
-                    <td class="align-middle">
-                      <a
-                        href="/promotions/1"
-                        class="text-secondary font-weight-bold text-xs"
-                        data-toggle="tooltip"
-                        data-original-title="Edit user"
-                      >
-                        Edit
-                      </a>
-                      <a
-                        href="javascript:;"
-                        class="mx-3 text-secondary font-weight-bold text-xs"
-                        data-bs-toggle="modal"
-                        data-bs-target="#deleteModal"
-                      >
-                        Delete
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex px-2 py-1">
-                        <div class="d-flex flex-column justify-content-center">
-                          <h6 class="mb-0 text-sm">Miriam Eric</h6>
-                          <p class="text-xs text-secondary mb-0">
-                            miriam@bestboxtv.com
-                          </p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-center text-xs font-weight-bold mb-0">
-                        10%
-                      </p>
-                    </td>
-                    <td class="align-middle text-center text-sm">
-                      <p>2%</p>
-                    </td>
-                    <td class="align-middle">
-                      <a
-                        href="/promotions/1"
-                        class="text-secondary font-weight-bold text-xs"
-                        data-toggle="tooltip"
-                        data-original-title="Edit user"
-                      >
-                        Edit
-                      </a>
-                      <a
-                        href="javascript:;"
-                        class="mx-3 text-secondary font-weight-bold text-xs"
-                        data-bs-toggle="modal"
-                        data-bs-target="#deleteModal"
-                      >
-                        Delete
-                      </a>
-                    </td>
-                  </tr>
+                    </div>
+                  </div>
+                  <!-- End -->
+
+                  <% } %> <% } %>
                 </tbody>
               </table>
             </div>

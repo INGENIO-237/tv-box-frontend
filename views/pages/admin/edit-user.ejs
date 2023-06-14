@@ -1,9 +1,11 @@
 <div class="container d-flex justify-content-center">
-  <form role="form" class="col-md-6">
+  <form role="form" class="col-md-6" action="/users/<%= user.id_usr %>" method="post">
     <h2>Edit User</h2>
     <label>Email</label>
     <div class="mb-3">
       <input
+        name="email"
+        value="<%= user.email_usr %>"
         type="email"
         class="form-control"
         placeholder="Email"
@@ -11,19 +13,11 @@
         aria-describedby="email-addon"
       />
     </div>
-    <label>Password</label>
-    <div class="mb-3">
-      <input
-        type="password"
-        class="form-control"
-        placeholder="Password"
-        aria-label="Password"
-        aria-describedby="password-addon"
-      />
-    </div>
     <label>First Name</label>
     <div class="mb-3">
       <input
+        name="fname"
+        value="<%= user.prenom_usr %>"
         type="text"
         class="form-control"
         placeholder="First Name"
@@ -34,6 +28,8 @@
     <label>Name</label>
     <div class="mb-3">
       <input
+        name="name"
+        value="<%= user.nom_usr %>"
         type="name"
         class="form-control"
         placeholder="Name"
@@ -44,6 +40,8 @@
     <label>Phone</label>
     <div class="mb-3">
       <input
+        name="phone"
+        value="<%= user.phone_usr %>"
         type="tel"
         class="form-control"
         placeholder="Phone"

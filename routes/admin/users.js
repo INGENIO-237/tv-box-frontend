@@ -1,12 +1,25 @@
+const {
+  getAllUsers,
+  createUser,
+  getSingleUser,
+  updateUser,
+  deleteUser,
+} = require("../../controllers/admin/users");
+const { checkLoggedIn } = require("../../middlewares/user-session");
+
 const router = require("express").Router();
 
-// Users
-router.get("/", (req, res) => {
-  res.render("pages/admin/users", { layout: 'dashboard-layout.ejs' });
-});
+router.use(checkLoggedIn);
 
-router.get("/:id", (req, res) => {
-  res.render("pages/admin/edit-user", { layout: 'dashboard-layout.ejs' });
-});
+// Marketers
+router.get("/", getAllUsers);
+
+router.post("/", createUser);
+
+router.get("/:id", getSingleUser);
+
+router.post("/:id", updateUser);
+
+router.get("/delete/:id", deleteUser);
 
 module.exports = router;

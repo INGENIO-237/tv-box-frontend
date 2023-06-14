@@ -11,11 +11,18 @@
               <p class="mb-0">Enter your email and password to sign in</p>
             </div>
             <div class="card-body">
-              <form role="form">
+              <% if(error != undefined){%>
+                <div class="alert alert-danger alert-dismissible fade show text-white" role="alert">
+                  <%= error %>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              <% } %>
+              <form role="form" action="/account/login" method="post">
                 <label>Email</label>
                 <div class="mb-3">
                   <input
                     type="email"
+                    name="email"
                     class="form-control"
                     placeholder="Email"
                     aria-label="Email"
@@ -25,7 +32,8 @@
                 <label>Password</label>
                 <div class="mb-3">
                   <input
-                    type="email"
+                    type="password"
+                    name="password"
                     class="form-control"
                     placeholder="Password"
                     aria-label="Password"
@@ -34,7 +42,7 @@
                 </div>
                 <div class="text-center">
                   <button
-                    type="button"
+                    type="submit"
                     class="btn bg-gradient-info w-100 mt-4 mb-0"
                   >
                     Sign in

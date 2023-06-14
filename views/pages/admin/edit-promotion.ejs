@@ -1,40 +1,44 @@
 <div class="container d-flex justify-content-center">
-  <form role="form" class="col-md-6">
+  <form role="form" class="col-md-6" action="/promotions/<%= promotion[0].id_usr %>" method="post">
     <h2>Edit Promotion</h2>
-    <label>Marketer</label>
-    <div class="mb-3">
-      <select
-        class="form-control"
-        placeholder="Marketer"
-        aria-label="Marketer"
-        aria-describedby="marketer-addon"
-      >
-        <option value="">John Doe</option>
-        <option value="">Lorem</option>
-      </select>
-    </div>
-    <label>Phone</label>
+    <label>Code</label>
     <div class="mb-3">
       <input
-        type="tel"
+      disabled
+        name="code"
+        value="<%= promotion[0].code_prom %>"
+        type="text"
         class="form-control"
-        placeholder="Phone"
-        aria-label="Phone"
-        aria-describedby="phone-addon"
+        aria-label="code"
+        aria-describedby="code-addon"
       />
     </div>
-    <label>Phone</label>
+    <label>Discount</label>
     <div class="mb-3">
       <input
-        type="tel"
+        name="discount"
+        value="<%= promotion[0].reduction_prom %>"
+        type="number"
+        step="any"
         class="form-control"
-        placeholder="Phone"
-        aria-label="Phone"
-        aria-describedby="phone-addon"
+        aria-label="discount"
+        aria-describedby="discount-addon"
+      />
+    </div>
+    <label>Commission</label>
+    <div class="mb-3">
+      <input
+        name="commission"
+        value="<%= promotion[0].commission_prom %>"
+        type="number"
+        step="any"
+        class="form-control"
+        aria-label="commission"
+        aria-describedby="commission-addon"
       />
     </div>
     <div class="btn-group d-flex justify-content-center">
-      <input type="submit" value="Save" class="btn btn-success">
+      <input type="submit" value="Save" class="btn btn-success" />
     </div>
   </form>
 </div>

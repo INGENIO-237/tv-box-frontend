@@ -1,5 +1,9 @@
 const express = require("express");
 const layouts = require("express-ejs-layouts");
+const cookies = require("cookie-parser");
+const session = require("express-session");
+const { userSession } = require("./middlewares/user-session");
+const { imageEndpoint } = require("./middlewares/image");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 8000;
@@ -7,15 +11,34 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 
+// Cookies parser
+app.use(cookies());
+
+// Initialize session
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    saveUninitialized: true,
+    resave: false,
+    cookie: { maxAge: 1000 * 60 * 60 * 24 * 365 },
+  })
+);
+
+// UserSession
+app.use(userSession);
+
+// Image Endpoint
+app.use(imageEndpoint);
+
 // EJS
 app.use(layouts);
 app.set("view engine", "ejs");
 
+// Static files
 app.use(express.static("public"));
 
 app.use("/", require("./routes/main"));
 app.use("/account", require("./routes/auth"));
-app.use("/admin", require("./routes/admin"));
 app.use("/articles", require("./routes/article"));
 app.use("/checkout", require("./routes/chekout"));
 

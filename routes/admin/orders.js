@@ -1,4 +1,8 @@
+const { checkLoggedIn } = require("../../middlewares/user-session");
+
 const router = require("express").Router();
+
+router.use(checkLoggedIn);
 
 // Orders
 router.get("/", (req, res) => {
