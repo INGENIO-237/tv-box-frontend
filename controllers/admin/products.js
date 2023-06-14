@@ -1,4 +1,5 @@
 const axios = require("axios");
+const { newPath } = require("../../utils/article-image");
 require("dotenv").config();
 
 const getAllProducts = (req, res) => {
@@ -35,12 +36,24 @@ const getAllProducts = (req, res) => {
     });
 };
 
-const createProduct = (req, res) => {
-  // const { title, category, description, price, image } = req.body;
-  
-  console.log(req.body);
+const createProduct = async (req, res) => {
+  const { title, category, description, price } = req.body;
+  const imgPath = await newPath(req.file);
 
-  // axios.post()
+  axios
+    .post(process.env.BACKEND_ENDPOINT + "/articles", {
+      id_cat: category,
+      nom_art: title,
+      desc_art: description,
+      prix_art: price,
+      image_art: imgPath,
+    })
+    .then((response) => {
+      res.redirect("/products");
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 };
 
 module.exports = { getAllProducts, createProduct };
