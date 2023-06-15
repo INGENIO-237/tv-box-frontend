@@ -325,6 +325,7 @@ section.features {
 
       .black {
         position: absolute;
+        z-index: 2;
         left: 10%;
         top: 70%;
         width: 5em;
@@ -478,7 +479,8 @@ section.map {
   margin: 1em 0;
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
 
   img {
@@ -753,6 +755,10 @@ footer {
   }
 
   section.features {
+    .features-list{
+      justify-content: space-evenly;
+    }
+
     .description {
       .part-1 {
         .sub-part-2 {
@@ -1003,6 +1009,23 @@ footer {
       justify-content: space-evenly;
     }
   }
+
+  section.map {
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .content{
+      text-align: left;
+      
+      p{
+        text-align: justify;
+      }
+
+      h5{
+        margin-top: 2em;
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 1560px) {
@@ -1066,7 +1089,6 @@ footer {
         }
 
         .black {
-          z-index: 2;
           left: 24%;
         }
       }

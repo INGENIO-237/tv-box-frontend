@@ -278,6 +278,7 @@ section.features .description .part-2 .centered {
 }
 section.features .description .part-2 .black {
   position: absolute;
+  z-index: 2;
   left: 10%;
   top: 70%;
   width: 5em;
@@ -411,7 +412,8 @@ section.map {
   margin: 1em 0;
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
 }
 section.map img {
@@ -634,6 +636,9 @@ footer .part-2 .credits {
   section.pricing .pricing-items {
     justify-content: space-evenly;
   }
+  section.features .features-list {
+    justify-content: space-evenly;
+  }
   section.features .description .part-1 .sub-part-2 {
     justify-content: space-evenly;
   }
@@ -822,6 +827,19 @@ footer .part-2 .credits {
   section.news .content {
     justify-content: space-evenly;
   }
+  section.map {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  section.map .content {
+    text-align: left;
+  }
+  section.map .content p {
+    text-align: justify;
+  }
+  section.map .content h5 {
+    margin-top: 2em;
+  }
 }
 @media only screen and (min-width: 1560px) {
   section.testimonials {
@@ -874,7 +892,6 @@ footer .part-2 .credits {
     top: 0;
   }
   section.features .description .part-2 .black {
-    z-index: 2;
     left: 24%;
   }
 }/*# sourceMappingURL=main.css.map */
