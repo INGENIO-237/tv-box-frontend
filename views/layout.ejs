@@ -1,169 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="../images/LOGO BOX TV_ 3.png" />
-    <title>BEST BOX TV</title>
 
-    <!-- Font import -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="../images/LOGO BOX TV_ 3.png" />
+  <title>BEST BOX TV</title>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <!-- Font import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/main.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="main-hero">
-        <div class="content-shadow">
-          <div class="support custom-wrapper">
-            <p>
-              Service Client -
-              <a href="tel:+(62) 8005678990">+(62) 800-567-8990</a>
-            </p>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/main.css" />
+
+  <!-- Jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+  integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="main-hero">
+      <div class="content-shadow">
+        <div class="support custom-wrapper">
+          <p>
+            Service Client -
+            <a href="tel:+(62) 8005678990">+(62) 800-567-8990</a>
+          </p>
+          <ul>
+            <li>
+              <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <header class="custom-wrapper">
+          <a href="#">
+            <img src="images/LOGO BOX TV_ 3.png" alt="BEST BOX TV LOGO" />
+          </a>
+          <nav>
+            <i class="fa-solid fa-xmark fa-2xl close"></i>
             <ul>
-              <li>
-                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a href=""><i class="fa-brands fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
-              </li>
-              <li>
-                <a href=""><i class="fa-brands fa-youtube"></i></a>
-              </li>
-            </ul>
-          </div>
-          <hr />
-          <header class="custom-wrapper">
-            <a href="#">
-              <img src="images/LOGO BOX TV_ 3.png" alt="BEST BOX TV LOGO" />
-            </a>
-            <nav>
-              <i class="fa-solid fa-xmark fa-2xl close"></i>
-              <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/articles">Produits</a></li>
-                <!-- <li><a href="/packages">Packages</a></li>
+              <li><a href="/">Accueil</a></li>
+              <li><a href="/articles">Produits</a></li>
+              <!-- <li><a href="/packages">Packages</a></li>
                 <li><a href="/services">Services</a></li> -->
-                <li><a href="/commercials">Devenir un commercial</a></li>
-                <li><a href="/support">Support</a></li>
-                <!-- <li><a href="#"><i class="fa-solid fa-cart-shopping"></i><span>0</span></a></li> -->
-                <li class="start"><a href="/account/login">Connexion</a></li>
-              </ul>
-            </nav>
-            <i class="fa-solid fa-bars menu" style="color: #ffffff"></i>
-          </header>
-          <a href="/cart" class="checkout"><i class="fa-solid fa-cart-shopping"></i><span id="cart-count"><%= Object.keys(cart).length %></span></a>
-      <%- body %>
-      <footer class="custom-wrapper">
-        <div class="part-1">
-          <div class="brand-and-socials">
-            <img src="images/LOGO BOX TV_ 3.png" alt="" />
-            <ul>
-              <li>
-                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a href=""><i class="fa-brands fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
-              </li>
-              <li>
-                <a href=""><i class="fa-brands fa-youtube"></i></a>
-              </li>
+              <li><a href="/commercials">Devenir un commercial</a></li>
+              <li><a href="/support">Support</a></li>
+              <!-- <li><a href="#"><i class="fa-solid fa-cart-shopping"></i><span>0</span></a></li> -->
+              <li class="start"><a href="/account/login">Connexion</a></li>
             </ul>
-          </div>
-        </div>
-        <div class="part-2">
-          <div class="sub-part-1">
-            <div>
-              <h4>NAVIGATION</h4>
-              <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="#">Produits</a></li>
-                <li><a href="/commercials">Devenir un commercial</a></li>
-                <li><a href="/support">Demander un technicien</a></li>
-                <li><a href="#">Modes d'emploi des boxs</a></li>
-              </ul>
+          </nav>
+          <i class="fa-solid fa-bars menu" style="color: #ffffff"></i>
+        </header>
+        <a href="/cart" class="checkout"><i class="fa-solid fa-cart-shopping"></i><span id="cart-count">
+            <%= Object.keys(cart).length %>
+          </span></a>
+        <%- body %>
+          <footer class="custom-wrapper">
+            <div class="part-1">
+              <div class="brand-and-socials">
+                <img src="images/LOGO BOX TV_ 3.png" alt="" />
+                <ul>
+                  <li>
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                  </li>
+                  <li>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <h4>PRODUITS</h4>
-              <ul>
-                <li><a href="#">Formule GTV</a></li>
-                <li><a href="#">Formule GTV pro</a></li>
-                <li><a href="#">Formule GTV pro max</a></li>
-                <li><a href="#">Formule VIP</a></li>
-                <li><a href="#">Accessoires</a></li>
-              </ul>
+            <div class="part-2">
+              <div class="sub-part-1">
+                <div>
+                  <h4>NAVIGATION</h4>
+                  <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="#">Produits</a></li>
+                    <li><a href="/commercials">Devenir un commercial</a></li>
+                    <li><a href="/support">Demander un technicien</a></li>
+                    <li><a href="#">Modes d'emploi des boxs</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>PRODUITS</h4>
+                  <ul>
+                    <li><a href="#">Formule GTV</a></li>
+                    <li><a href="#">Formule GTV pro</a></li>
+                    <li><a href="#">Formule GTV pro max</a></li>
+                    <li><a href="#">Formule VIP</a></li>
+                    <li><a href="#">Accessoires</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>SUPPORT</h4>
+                  <ul>
+                    <li><a href="#">Contactez-nous</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Guide d'installation</a></li>
+                    <li><a href="#">Tarifs</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>LIENS UTILES</h4>
+                  <ul>
+                    <li><a href="#">Mon compte</a></li>
+                    <li><a href="#">Réabonnement</a></li>
+                    <li><a href="#">Politique de ventes</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="sub-part-2">
+                <h4>COORDONNÉES</h4>
+                <div>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span><a href="#">Roving St., Big City, PKU 23456</a></span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-phone"></i>
+                  <span><a href="#">(1) 800-567-8990</a></span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-envelope"></i>
+                  <span><a href="#">support@domain.com</a></span>
+                </div>
+              </div>
             </div>
-            <div>
-              <h4>SUPPORT</h4>
-              <ul>
-                <li><a href="#">Contactez-nous</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Guide d'installation</a></li>
-                <li><a href="#">Tarifs</a></li>
-              </ul>
+            <div class="credits">
+              <div class="copyrigths">
+                <p>&copy; - BEST BOX TV | Designed by Mentalists</p>
+              </div>
+              <div class="cards">
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <i class="fa-brands fa-cc-paypal"></i>
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-amazon-pay"></i>
+                <i class="fa-brands fa-cc-stripe"></i>
+              </div>
             </div>
-            <div>
-              <h4>LIENS UTILES</h4>
-              <ul>
-                <li><a href="#">Mon compte</a></li>
-                <li><a href="#">Réabonnement</a></li>
-                <li><a href="#">Politique de ventes</a></li>
-                <li><a href="#">Mentions légales</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="sub-part-2">
-            <h4>COORDONNÉES</h4>
-            <div>
-              <i class="fa-solid fa-location-dot"></i>
-              <span><a href="#">Roving St., Big City, PKU 23456</a></span>
-            </div>
-            <div>
-              <i class="fa-solid fa-phone"></i>
-              <span><a href="#">(1) 800-567-8990</a></span>
-            </div>
-            <div>
-              <i class="fa-solid fa-envelope"></i>
-              <span><a href="#">support@domain.com</a></span>
-            </div>
-          </div>
-        </div>
-        <div class="credits">
-          <div class="copyrigths">
-            <p>&copy; - BEST BOX TV | Designed by Mentalists</p>
-          </div>
-          <div class="cards">
-            <i class="fa-brands fa-cc-mastercard"></i>
-            <i class="fa-brands fa-cc-paypal"></i>
-            <i class="fa-brands fa-cc-visa"></i>
-            <i class="fa-brands fa-amazon-pay"></i>
-            <i class="fa-brands fa-cc-stripe"></i>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <script src="/js/menu.js"></script>
-  </body>
+          </footer>
+      </div>
+      <script src="/js/menu.js"></script>
+      <script src="/js/cart.js"></script>
+</body>
+
 </html>

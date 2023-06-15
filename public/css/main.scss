@@ -796,6 +796,13 @@ footer {
   }
 }
 
+@media only screen and (min-width: 700px) {
+  .checkout {
+    top: 90%;
+    left: 87%;
+  }
+}
+
 @media only screen and (min-width: 819px) {
   footer {
     .part-1 {
