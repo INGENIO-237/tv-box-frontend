@@ -27,10 +27,10 @@ const loginUser = (req, res) => {
         });
     })
     .catch((error) => {
-      console.error(error.response.data.message);
+      console.error(error);
       res.render("pages/auth/login", {
         layout: "auth-layout.ejs",
-        error: error.response.data.message,
+        error: error,
       });
     });
 };

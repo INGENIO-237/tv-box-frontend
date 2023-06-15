@@ -154,7 +154,7 @@
             <div class="d-flex justify-content-end align-items-center">
               <div class="btn-group">
                 <a
-                  href="/products/1"
+                  href="/products/<%= products[i].id_art %>"
                   type="button"
                   class="btn btn-sm btn-outline-secondary"
                 >
@@ -165,7 +165,7 @@
                   type="button"
                   class="btn btn-sm btn-outline-danger"
                   data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"
+                  data-bs-target="#deleteModal<%= products[i].id_art %>"
                 >
                   Delete
                 </a>
@@ -174,6 +174,37 @@
           </div>
         </div>
       </div>
+      <!-- Delete Pop up -->
+      <div
+      class="modal fade"
+      id="deleteModal<%= products[i].id_art %>"
+      tabindex="-1"
+      aria-labelledby="deleteModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>Are you sure ?</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <a
+              href="/products/delete/<%= products[i].id_art %>"
+              class="btn btn-danger"
+              >Delete</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End -->
       <% } %> <% } %>
     </div>
   </div>
