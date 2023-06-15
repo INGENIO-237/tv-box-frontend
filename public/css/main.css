@@ -840,14 +840,11 @@ footer .part-2 .credits {
   section.map .content h5 {
     margin-top: 2em;
   }
-}
-@media only screen and (min-width: 1560px) {
   section.testimonials {
     position: relative;
-    margin-bottom: 10em;
+    margin-bottom: 12em;
   }
   section.testimonials .part-1 {
-    background: url("../images/japanese-spouses-using-tablet-browsing-internet-sitting-on-couch-indoor 1.png");
     background-position-x: 50%;
     height: 25em;
   }
@@ -856,16 +853,15 @@ footer .part-2 .credits {
   }
   section.testimonials .part-2 {
     position: absolute;
-    top: 40%;
-    display: flex;
-    justify-content: space-between;
-  }
-  section.testimonials .part-2 .rating {
-    color: #ffce31;
+    top: 50%;
+    justify-content: space-evenly;
   }
   section.testimonials .part-2 .testimonial {
+    width: 20%;
     background: white;
-    margin: 1em 1em;
+  }
+  section.testimonials .part-2 .testimonial:nth-child(2) {
+    margin-left: 0;
   }
 }
 @media only screen and (min-width: 1278px) {
