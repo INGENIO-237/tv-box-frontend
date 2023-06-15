@@ -1,11 +1,11 @@
-const { getAllArticlesHandler } = require("../controllers/admin/article");
+const { getAllArticles } = require("../controllers/articles");
 
 const router = require("express").Router();
 
 // @desc Get all articles
 // @route GET /api/{version}/articles
 // private
-router.get("/", getAllArticlesHandler);
+router.get("/", getAllArticles);
 
 // // @desc Create an article
 // // @route POST /api/{version}/articles

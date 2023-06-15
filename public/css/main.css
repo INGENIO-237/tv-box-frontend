@@ -769,6 +769,9 @@ footer .part-2 .credits {
     background: #26416c;
     border-radius: 50px;
   }
+  section.features .features-list {
+    justify-content: space-evenly;
+  }
   section.features .description .part-1 .sub-part-2 {
     justify-content: space-between;
   }
@@ -777,7 +780,7 @@ footer .part-2 .credits {
     justify-content: flex-end;
   }
   section.pricing .pricing-items {
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   section.search {
     background: black;
@@ -817,7 +820,7 @@ footer .part-2 .credits {
     color: white;
   }
   section.news .content {
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 }
 @media only screen and (min-width: 1560px) {

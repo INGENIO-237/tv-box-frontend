@@ -1,4 +1,5 @@
 const axios = require("axios");
+const { imagePath } = require("../utils/image-path");
 require("dotenv").config();
 
 const getAllArticles = (req, res) => {
@@ -6,7 +7,15 @@ const getAllArticles = (req, res) => {
     .get(process.env.BACKEND_ENDPOINT + "/articles")
     .then((response) => {
       const articles = response.data;
-      console.log(articles);
+
+      // Arrange image path
+      articles.forEach((article) => {
+        article.image_art = imagePath(article);
+      });
+
+      res.render("pages/articles/articles", {
+        articles: articles,
+      });
     })
     .catch((error) => {
       console.error(error.response);

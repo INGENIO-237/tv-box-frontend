@@ -930,6 +930,9 @@ footer {
   }
 
   section.features {
+    .features-list {
+      justify-content: space-evenly;
+    }
     .description {
       .part-1 {
         .sub-part-2 {
@@ -946,7 +949,7 @@ footer {
 
   section.pricing {
     .pricing-items {
-      justify-content: space-between;
+      justify-content: space-evenly;
     }
   }
 
@@ -997,7 +1000,7 @@ footer {
 
   section.news {
     .content {
-      justify-content: space-between;
+      justify-content: space-evenly;
     }
   }
 }
