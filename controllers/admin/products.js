@@ -92,6 +92,8 @@ const updateProduct = async (req, res) => {
     .then((response) => {
       const product = response.data;
 
+      if (req.file == undefined) imgPath = product.image_art;
+
       if (req.file != undefined) {
         deleteImg(product);
       }
@@ -132,5 +134,5 @@ module.exports = {
   createProduct,
   getSingleProduct,
   updateProduct,
-  deleteProduct
+  deleteProduct,
 };
