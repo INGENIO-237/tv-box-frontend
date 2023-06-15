@@ -278,6 +278,7 @@ section.features .description .part-2 .centered {
 }
 section.features .description .part-2 .black {
   position: absolute;
+  z-index: 2;
   left: 10%;
   top: 70%;
   width: 5em;
@@ -411,7 +412,8 @@ section.map {
   margin: 1em 0;
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
 }
 section.map img {
@@ -634,6 +636,9 @@ footer .part-2 .credits {
   section.pricing .pricing-items {
     justify-content: space-evenly;
   }
+  section.features .features-list {
+    justify-content: space-evenly;
+  }
   section.features .description .part-1 .sub-part-2 {
     justify-content: space-evenly;
   }
@@ -654,6 +659,12 @@ footer .part-2 .credits {
   }
   section.testimonials .part-2 {
     justify-content: space-evenly;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .checkout {
+    top: 90%;
+    left: 87%;
   }
 }
 @media only screen and (min-width: 819px) {
@@ -769,6 +780,9 @@ footer .part-2 .credits {
     background: #26416c;
     border-radius: 50px;
   }
+  section.features .features-list {
+    justify-content: space-evenly;
+  }
   section.features .description .part-1 .sub-part-2 {
     justify-content: space-between;
   }
@@ -777,7 +791,7 @@ footer .part-2 .credits {
     justify-content: flex-end;
   }
   section.pricing .pricing-items {
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   section.search {
     background: black;
@@ -817,16 +831,26 @@ footer .part-2 .credits {
     color: white;
   }
   section.news .content {
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
-}
-@media only screen and (min-width: 1560px) {
+  section.map {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  section.map .content {
+    text-align: left;
+  }
+  section.map .content p {
+    text-align: justify;
+  }
+  section.map .content h5 {
+    margin-top: 2em;
+  }
   section.testimonials {
     position: relative;
-    margin-bottom: 10em;
+    margin-bottom: 12em;
   }
   section.testimonials .part-1 {
-    background: url("../images/japanese-spouses-using-tablet-browsing-internet-sitting-on-couch-indoor 1.png");
     background-position-x: 50%;
     height: 25em;
   }
@@ -835,16 +859,15 @@ footer .part-2 .credits {
   }
   section.testimonials .part-2 {
     position: absolute;
-    top: 40%;
-    display: flex;
-    justify-content: space-between;
-  }
-  section.testimonials .part-2 .rating {
-    color: #ffce31;
+    top: 50%;
+    justify-content: space-evenly;
   }
   section.testimonials .part-2 .testimonial {
+    width: 20%;
     background: white;
-    margin: 1em 1em;
+  }
+  section.testimonials .part-2 .testimonial:nth-child(2) {
+    margin-left: 0;
   }
 }
 @media only screen and (min-width: 1278px) {
@@ -871,7 +894,6 @@ footer .part-2 .credits {
     top: 0;
   }
   section.features .description .part-2 .black {
-    z-index: 2;
     left: 24%;
   }
 }/*# sourceMappingURL=main.css.map */

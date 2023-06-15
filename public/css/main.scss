@@ -56,7 +56,7 @@ body {
     font-weight: bold;
   }
 
-  i{
+  i {
     color: #26416c;
   }
 
@@ -99,7 +99,7 @@ header {
     background: #26416c;
     position: fixed;
     transform: translateX(100%);
-    transition: .5s ease-in-out;
+    transition: 0.5s ease-in-out;
     right: 0;
     top: 0;
     width: 50%;
@@ -195,7 +195,7 @@ header {
   }
 }
 
-.checkout{
+.checkout {
   background: #046c75;
   padding: 2em 1.7em;
   position: fixed;
@@ -208,7 +208,7 @@ header {
   align-items: center;
   cursor: pointer;
 
-  i{
+  i {
     margin-right: 0.3em;
   }
 }
@@ -325,6 +325,7 @@ section.features {
 
       .black {
         position: absolute;
+        z-index: 2;
         left: 10%;
         top: 70%;
         width: 5em;
@@ -478,7 +479,8 @@ section.map {
   margin: 1em 0;
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
 
   img {
@@ -753,6 +755,10 @@ footer {
   }
 
   section.features {
+    .features-list {
+      justify-content: space-evenly;
+    }
+
     .description {
       .part-1 {
         .sub-part-2 {
@@ -787,6 +793,13 @@ footer {
     .part-2 {
       justify-content: space-evenly;
     }
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .checkout {
+    top: 90%;
+    left: 87%;
   }
 }
 
@@ -930,6 +943,9 @@ footer {
   }
 
   section.features {
+    .features-list {
+      justify-content: space-evenly;
+    }
     .description {
       .part-1 {
         .sub-part-2 {
@@ -937,7 +953,7 @@ footer {
         }
       }
 
-      .part-2{
+      .part-2 {
         display: flex;
         justify-content: flex-end;
       }
@@ -946,7 +962,7 @@ footer {
 
   section.pricing {
     .pricing-items {
-      justify-content: space-between;
+      justify-content: space-evenly;
     }
   }
 
@@ -956,9 +972,9 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  
+
     flex-wrap: wrap;
-  
+
     .heading {
       i {
         background: #046c75;
@@ -967,7 +983,7 @@ footer {
         margin: 1em;
       }
     }
-  
+
     .search-controls {
       background: white;
       width: 22em;
@@ -976,7 +992,7 @@ footer {
       justify-content: space-between;
       margin-bottom: 1em;
     }
-  
+
     .search-input {
       border-radius: 50px;
       width: 19em;
@@ -984,7 +1000,7 @@ footer {
       border: none;
       padding: 1.2em;
     }
-  
+
     .search-submit {
       border-radius: 50px;
       padding: 1em;
@@ -997,17 +1013,31 @@ footer {
 
   section.news {
     .content {
-      justify-content: space-between;
+      justify-content: space-evenly;
     }
   }
-}
 
-@media only screen and (min-width: 1560px) {
+  section.map {
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .content {
+      text-align: left;
+
+      p {
+        text-align: justify;
+      }
+
+      h5 {
+        margin-top: 2em;
+      }
+    }
+  }
+
   section.testimonials {
     position: relative;
-    margin-bottom: 10em;
+    margin-bottom: 12em;
     .part-1 {
-      background: url("../images/japanese-spouses-using-tablet-browsing-internet-sitting-on-couch-indoor\ 1.png");
       background-position-x: 50%;
       height: 25em;
     }
@@ -1018,16 +1048,17 @@ footer {
 
     .part-2 {
       position: absolute;
-      top: 40%;
-      display: flex;
-      justify-content: space-between;
-      .rating {
-        color: #ffce31;
-      }
+      top: 50%;
+      // left: 5%;
+      justify-content: space-evenly;
 
       .testimonial {
+        width: 20%;
         background: white;
-        margin: 1em 1em;
+      }
+
+      .testimonial:nth-child(2) {
+        margin-left: 0;
       }
     }
   }
@@ -1063,7 +1094,6 @@ footer {
         }
 
         .black {
-          z-index: 2;
           left: 24%;
         }
       }

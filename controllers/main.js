@@ -1,8 +1,7 @@
 const axios = require("axios");
 const { imagePath } = require("../utils/image-path");
-require("dotenv").config();
 
-const getAllArticles = (req, res) => {
+const renderIndex = (req, res) => {
   axios
     .get(process.env.BACKEND_ENDPOINT + "/articles")
     .then((response) => {
@@ -13,7 +12,7 @@ const getAllArticles = (req, res) => {
         article.image_art = imagePath(article);
       });
 
-      res.render("pages/articles/articles", {
+      res.render("index", {
         articles: articles,
       });
     })
@@ -22,4 +21,4 @@ const getAllArticles = (req, res) => {
     });
 };
 
-module.exports = { getAllArticles };
+module.exports = { renderIndex }

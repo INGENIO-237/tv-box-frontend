@@ -1,12 +1,11 @@
 <link rel="stylesheet" href="css/commercial.css" />
 <link rel="stylesheet" href="css/articles.css" />
 
-
-    <div class="hero-content custom-wrapper">
-      <h1>Nos articles</h1>
-      <h3>Accueil - articles</h3>
-    </div>
-  </div>
+<div class="hero-content custom-wrapper">
+  <h1>Nos articles</h1>
+  <h3>Accueil - articles</h3>
+</div>
+</div>
 </div>
 
 <section class="custom-wrapper pricing">
@@ -16,67 +15,34 @@
     <h1>Discover Our Best Plans</h1>
   </div>
   <div class="pricing-items">
-    <div class="pricing-item">
-      <div class="promo">Promo</div>
-      <br />
-      <img src="images/pngwing 4.png" alt="Internet" />
-      <div class="desc">
-        <i class="fa-solid fa-wifi"></i>
-        <h2>Internet</h2>
-        <!-- <ul>
+    <% for(let i=0; i < articles.length; i++){ %>
+      <div class="pricing-item">
+        <!-- <div class="promo">Promo</div>
+      <br /> -->
+        <img src="<%= imageEndpoint %>/<%= articles[i].image_art %>" alt="<%= articles[i].nom_art %>" width="100%"
+          height="225" />
+        <div class="desc">
+          <!-- <i class="fa-solid fa-wifi"></i> -->
+          <h2 id="name-<%= articles[i].id_art %>" data-name="<%= articles[i].nom_art %>">
+            <%= articles[i].nom_art %>
+          </h2>
+          <h4>
+            <%= articles[i].libelle_cat %>
+          </h4>
+          <!-- <ul>
           <li>Home Broadband</li>
           <li>Cell Phone Connection</li>
           <li>Home Security</li>
           <li>99% Internet Uptime</li>
         </ul> -->
-      </div>
-      <p><span class="price">39.99$</span>/Month</p>
-      <a href="#" class="buy-btn"
-        >Acheter<i class="fa-solid fa-arrow-right"></i
-      ></a>
-    </div>
-    <div class="pricing-item">
-      <div class="promo">Promo</div>
-      <br />
-      <img src="images/z10-pro-300x222 (1) 1.png" alt="Internet + TV" />
-      <div class="desc">
-        <div class="icons">
-          <i class="fa-solid fa-wifi"></i> + <i class="fa-solid fa-tv"></i>
         </div>
-        <h2>Internet + TV</h2>
-        <!-- <ul>
-          <li>Home Broadband</li>
-          <li>Cell Phone Connection</li>
-          <li>Home Security</li>
-          <li>99% Internet Uptime</li>
-        </ul> -->
-      </div>
-      <p><span class="price">39.99$</span>/Month</p>
-      <a href="#" class="buy-btn"
-        >Acheter<i class="fa-solid fa-arrow-right"></i
-      ></a>
-    </div>
-    <div class="pricing-item">
-      <div class="promo">Promo</div>
-      <br />
-      <img src="images/b2-300x222 1.png" alt="Internet + TV + Phone" />
-      <div class="desc">
-        <div class="icons">
-          <i class="fa-solid fa-wifi"></i> + <i class="fa-solid fa-tv"></i> +
-          <i class="fa-solid fa-mobile-screen"></i>
+        <p><span class="price" id="<%= articles[i].id_art %>" data-price="<%= articles[i].prix_art %>">$<%= articles[i].prix_art %></span></p>
+        <a href="">See more</a>
+        <div class="pricing-footer">
+          <input type="number" min="0" value="0" id="qty-<%= articles[i].id_art %>">
+          <button class="buy-btn" data-id="<%= articles[i].id_art %>" onclick="addToCart($(this).data('id'))">Acheter<i class="fa-solid fa-arrow-right"></i></button>
         </div>
-        <h2>Internet + TV + Phone</h2>
-        <!-- <ul>
-          <li>Home Broadband</li>
-          <li>Cell Phone Connection</li>
-          <li>Home Security</li>
-          <li>99% Internet Uptime</li>
-        </ul> -->
       </div>
-      <p><span class="price">39.99$</span>/Month</p>
-      <a href="#" class="buy-btn"
-        >Acheter<i class="fa-solid fa-arrow-right"></i
-      ></a>
-    </div>
+      <% } %>
   </div>
 </section>

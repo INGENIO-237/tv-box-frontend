@@ -4,6 +4,7 @@ const cookies = require("cookie-parser");
 const session = require("express-session");
 const { userSession } = require("./middlewares/user-session");
 const { imageEndpoint } = require("./middlewares/image");
+const cartSession = require("./middlewares/cart-session");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 8000;
@@ -24,8 +25,11 @@ app.use(
   })
 );
 
-// UserSession
+// User Session
 app.use(userSession);
+
+// Cart Session
+app.use(cartSession);
 
 // Image Endpoint
 app.use(imageEndpoint);
@@ -38,9 +42,9 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.use("/", require("./routes/main"));
+app.use("/cart", require("./routes/cart"));
 app.use("/account", require("./routes/auth"));
 app.use("/articles", require("./routes/article"));
-app.use("/checkout", require("./routes/chekout"));
 
 // Just for rendering the view and handle commercial request
 app.use("/commercials", require("./routes/commercial"));

@@ -1,9 +1,9 @@
+const { renderIndex } = require("../controllers/main");
+
 const router = require("express").Router();
 
 // Landing page
-router.get("", (req, res) => {
-  res.render("index");
-});
+router.get("", renderIndex);
 
 // Packages
 router.get("/packages", (req, res) => {
