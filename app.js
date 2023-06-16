@@ -5,6 +5,7 @@ const session = require("express-session");
 const { userSession } = require("./middlewares/user-session");
 const { imageEndpoint } = require("./middlewares/image");
 const cartSession = require("./middlewares/cart-session");
+const customerSession = require("./middlewares/customer-session");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 8000;
@@ -30,6 +31,9 @@ app.use(userSession);
 
 // Cart Session
 app.use(cartSession);
+
+// Customer Session
+app.use(customerSession);
 
 // Image Endpoint
 app.use(imageEndpoint);
