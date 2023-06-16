@@ -10,7 +10,7 @@ function addToCart(id) {
       quantity: qty,
       price: price,
     }).done((data) => {
-      console.log("data sent");
+      $("#cart-count").text(data.count);
     });
   }
 }

@@ -5,103 +5,112 @@
     <div class="col-md-8">
       <div class="card">
         <div class="card-body">
-          <h2>Hey Anna,</h2>
+          <h2>Hey <%= customer.fname %>,</h2>
           <p class="fs-sm">
-            This is the receipt for a payment of <strong>$390</strong> (USD) you
-            made to Spacial Themes.
+            These are the details for your purchase of
+            <strong>$<%= customer.total %></strong> you made to BEST BOX TV.
           </p>
 
           <div class="border-top border-gray-200 pt-4 mt-4">
             <div class="row">
               <div class="col-md-6">
-                <div class="text-muted mb-2">Payment No.</div>
-                <strong>#88305</strong>
-              </div>
-              <div class="col-md-6 text-md-end">
-                <div class="text-muted mb-2">Payment Date</div>
-                <strong>Feb/09/20</strong>
+                <div class="text-muted mb-2">Purchase No.</div>
+                <strong>#<%= customer.date %></strong>
               </div>
             </div>
-          </div>
 
-          <div class="border-top border-gray-200 mt-4 py-4">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="text-muted mb-2">Client</div>
-                <strong> John McClane </strong>
-                <p class="fs-sm">
-                  989 5th Avenue, New York, 55832
-                  <br />
-                  <a href="#!" class="text-purple">john@email.com </a>
-                </p>
+            <div class="border-top border-gray-200 mt-4 py-4">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="text-muted mb-2">Client</div>
+                  <strong>
+                    <%= customer.fname %>
+                      <%= customer.name %>
+                  </strong>
+                  <p class="fs-sm">
+                    <%= customer.address %>
+                      <br />
+                      <a href="#!" class="text-purple">
+                        <%= customer.email %>
+                      </a>
+                  </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                  <div class="text-muted mb-2">Payment To</div>
+                  <img src="/images/LOGO BOX TV_ 3.png" alt="" width="30%" />
+                  <p class="fs-sm">
+                    9th Avenue, San Francisco 99383
+                    <br />
+                    <a href="#!" class="text-purple">support@bestboxtv.com </a>
+                  </p>
+                </div>
               </div>
-              <div class="col-md-6 text-md-end">
-                <div class="text-muted mb-2">Payment To</div>
-                <img src="/images/LOGO BOX TV_ 3.png" alt="" width="30%" />
-                <p class="fs-sm">
-                  9th Avenue, San Francisco 99383
-                  <br />
-                  <a href="#!" class="text-purple">themes@email.com </a>
-                </p>
+            </div>
+
+            <table class="table border-bottom border-gray-200 mt-3">
+              <thead>
+                <tr>
+                  <th scope="col" class="fs-sm text-dark text-uppercase-bold-sm px-0">
+                    Description
+                  </th>
+                  <th scope="col" class="fs-sm text-dark text-uppercase-bold-sm text-end px-0">
+                    Quantity
+                  </th>
+                  <th scope="col" class="fs-sm text-dark text-uppercase-bold-sm text-end px-0">
+                    Unit price
+                  </th>
+                  <th scope="col" class="fs-sm text-dark text-uppercase-bold-sm text-end px-0">
+                    Amount
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(prop in cart){ %>
+                  <tr>
+                    <td class="text-left px-0">
+                      <%= cart[prop].name %>
+                    </td>
+                    <td class="text-center px-0">
+                      <%= cart[prop].quantity %>
+                    </td>
+                    <td class="text-center px-0">$<%= cart[prop].price %>
+                    </td>
+                    <td class="text-end px-0">
+                      $<%= cart[prop].price * cart[prop].quantity %>
+                    </td>
+                  </tr>
+                  <% } %>
+              </tbody>
+            </table>
+
+            <div class="mt-5">
+              <div class="d-flex justify-content-end">
+                <p class="text-muted me-3">Subtotal:</p>
+                <span>$<%= customer.total %></span>
               </div>
-            </div>
-          </div>
+              <div class="d-flex justify-content-end">
+                <p class="text-muted me-3">Discount:</p>
 
-          <table class="table border-bottom border-gray-200 mt-3">
-            <thead>
-              <tr>
-                <th
-                  scope="col"
-                  class="fs-sm text-dark text-uppercase-bold-sm px-0"
-                >
-                  Description
-                </th>
-                <th
-                  scope="col"
-                  class="fs-sm text-dark text-uppercase-bold-sm text-end px-0"
-                >
-                  Amount
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="px-0">Theme customization</td>
-                <td class="text-end px-0">$150.00</td>
-              </tr>
-              <tr>
-                <td class="px-0">Website design</td>
-                <td class="text-end px-0">$240.00</td>
-              </tr>
-            </tbody>
-          </table>
+                <% let discount = 0 %>
 
-          <div class="mt-5">
-            <div class="d-flex justify-content-end">
-              <p class="text-muted me-3">Subtotal:</p>
-              <span>$390.00</span>
+                <% if(customer.promotion !=undefined){ 
+                  discount=(customer.total * customer.promotion.reduction_prom)/100
+                } %>
+                  <span class="text-info">-$<%= discount %></span>
+              </div>
+              <div class="d-flex justify-content-end mt-3">
+                <h5 class="me-3">Total:</h5>
+                <h5 class="text-success">$<%= customer.total - discount %>
+                </h5>
+              </div>
+
             </div>
-            <div class="d-flex justify-content-end">
-              <p class="text-muted me-3">Discount:</p>
-              <span class="text-info">-$40.00</span>
-            </div>
-            <div class="d-flex justify-content-end mt-3">
-              <h5 class="me-3">Total:</h5>
-              <h5 class="text-success">$350 USD</h5>
-            </div>
+            <form action="cart/payment" method="POST" class="d-flex justify-content-center">
+              <script src="//checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="<%= key %>"
+                data-amount="<%= (customer.total - discount) * 100 %>" data-currency="CAD" data-name="<%= customer.fname %> <%= customer.name %>"
+                data-description="Payment for a purchase" data-locale="auto" data-stripeEmail="<%= customer.email %>" data-customer="<%= customer %>"></script>
+            </form>
           </div>
-          <form action="" method="POST" class="d-flex justify-content-center">
-            <script
-              src="//checkout.stripe.com/v2/checkout.js"
-              class="stripe-button"
-              data-key="<%= key %>"
-              data-amount="2500"
-              data-currency="inr"
-              data-name="Crafty Gourav"
-              data-description="Handmade Art and Craft Products"
-              data-locale="auto"
-            ></script>
-          </form>
         </div>
       </div>
     </div>
