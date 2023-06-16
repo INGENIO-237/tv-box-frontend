@@ -59,7 +59,7 @@ app.use("/promotions", require("./routes/admin/promotions"));
 app.use("/products", require("./routes/admin/products"));
 
 app.use("/orders", require("./routes/admin/orders"));
-app.use("/payments", require("./routes/admin/payments"));
+app.use("/transactions", require("./routes/admin/payments"));
 
 // For the administrator to add another admins
 app.use("/users", require("./routes/admin/users"));

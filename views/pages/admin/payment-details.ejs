@@ -12,7 +12,10 @@
         <div class="card-body pt-0 p-3 text-center">
           <h6 class="text-center mb-0">Amount</h6>
           <hr class="horizontal dark my-3" />
-          <h5 class="mb-0">$10,000</h5>
+          <h5 class="mb-0">$<%= payment.montant_paie %></h5>
+          <% if(payment.code_promo){ %>
+            <h6>Promo : <%= payment.code_promo %></h6>
+          <% } %>
         </div>
       </div>
     </div>
@@ -26,106 +29,28 @@
         </div>
         <div class="card-body pt-4 p-3">
           <ul class="list-group">
+            <% sales.forEach((sale) =>{ %>
             <li
               class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg"
             >
               <div class="d-flex align-items-center">
-                <h6 class="mb-3 text-sm">Oliver Liam</h6>
+                <h6 class="mb-3 text-sm"><%= sale.nom_art %></h6>
               </div>
               <div class="ms-auto align-items-center text-end">
                 <span
                   class="btn btn-link text-danger text-gradient px-3 mb-0"
                   href="javascript:;"
-                  >2</span
+                  ><%= sale.qte %></span
                 >
                 <span
                   class="btn btn-link text-dark px-3 mb-0"
                   href="javascript:;"
                 >
-                  $1000</span
+                  $<%= sale.prix_art %></span
                 >
               </div>
             </li>
-            <li
-              class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg"
-            >
-              <div class="d-flex align-items-center">
-                <h6 class="mb-3 text-sm">Oliver Liam</h6>
-              </div>
-              <div class="ms-auto align-items-center text-end">
-                <span
-                  class="btn btn-link text-danger text-gradient px-3 mb-0"
-                  href="javascript:;"
-                  >2</span
-                >
-                <span
-                  class="btn btn-link text-dark px-3 mb-0"
-                  href="javascript:;"
-                >
-                  $1000</span
-                >
-              </div>
-            </li>
-            <li
-              class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg"
-            >
-              <div class="d-flex align-items-center">
-                <h6 class="mb-3 text-sm">Oliver Liam</h6>
-              </div>
-              <div class="ms-auto align-items-center text-end">
-                <span
-                  class="btn btn-link text-danger text-gradient px-3 mb-0"
-                  href="javascript:;"
-                  >2</span
-                >
-                <span
-                  class="btn btn-link text-dark px-3 mb-0"
-                  href="javascript:;"
-                >
-                  $1000</span
-                >
-              </div>
-            </li>
-            <li
-              class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg"
-            >
-              <div class="d-flex align-items-center">
-                <h6 class="mb-3 text-sm">Oliver Liam</h6>
-              </div>
-              <div class="ms-auto align-items-center text-end">
-                <span
-                  class="btn btn-link text-danger text-gradient px-3 mb-0"
-                  href="javascript:;"
-                  >2</span
-                >
-                <span
-                  class="btn btn-link text-dark px-3 mb-0"
-                  href="javascript:;"
-                >
-                  $1000</span
-                >
-              </div>
-            </li>
-            <li
-              class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg"
-            >
-              <div class="d-flex align-items-center">
-                <h6 class="mb-3 text-sm">Oliver Liam</h6>
-              </div>
-              <div class="ms-auto align-items-center text-end">
-                <span
-                  class="btn btn-link text-danger text-gradient px-3 mb-0"
-                  href="javascript:;"
-                  >2</span
-                >
-                <span
-                  class="btn btn-link text-dark px-3 mb-0"
-                  href="javascript:;"
-                >
-                  $1000</span
-                >
-              </div>
-            </li>
+            <% }) %>
           </ul>
         </div>
       </div>

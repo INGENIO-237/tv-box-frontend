@@ -291,7 +291,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/payments">
+            <a class="nav-link" href="/transactions">
               <div
                 class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
               >
@@ -518,8 +518,11 @@
                 >
                   <i class="fa fa-power me-sm-1"></i>
                   <span class="d-sm-inline d-none"
-                    >Hello, <b><%= locals.user.prenom_usr %> <%=
-                      locals.user.nom_usr %></b></span
+                    >Hello,
+                    <b
+                      ><%= locals.user.prenom_usr %> <%= locals.user.nom_usr
+                      %></b
+                    ></span
                   >
                 </a>
               </li>
