@@ -2,11 +2,11 @@
 <link rel="stylesheet" href="css/support.css" />
 
 
-    <div class="hero-content custom-wrapper">
-      <h1>Support</h1>
-      <h3>Accueil - Support</h3>
-    </div>
-  </div>
+<div class="hero-content custom-wrapper">
+  <h1>Support</h1>
+  <h3>Accueil - Support</h3>
+</div>
+</div>
 </div>
 
 <section class="custom-wrapper features">
@@ -43,74 +43,69 @@
         inventore maiores explicabo eos aspernatur quidem.
       </p>
     </div>
-    <div class="feature-item">
-      <i class="fa-2xl fa-solid fa-gauge-high"></i>
-      <h4>Wifi seamless</h4>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa dolorem
-        inventore maiores explicabo eos aspernatur quidem.
-      </p>
-    </div>
   </div>
 
   <hr />
 </section>
 <section class="second-hero custom-wrapper">
-  <div class="mask">
-    <div class="content">
-      <section class="description">
-        <i class="section-icon fa-solid fa-wifi"></i
-        ><span class="section-title">BEST TV BOX Features</span>
-        <h1>Discover A Wider World Of Recreation</h1>
+  <div>
+    <section class="description">
+      <i class="section-icon fa-solid fa-wifi"></i><span class="section-title">BEST TV BOX Features</span>
+      <h1>Discover A Wider World Of Recreation</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit,
+        blanditiis culpa impedit delectus porro dolor vel id consequuntur ex
+        necessitatibus, magni architecto, doloremque inventore eaque? Iusto,
+        facere aut, sit inventore sapiente, nesciunt rem ratione dolorem
+        mollitia pariatur doloribus repellat! Repellendus atque ipsa iste amet
+        aspernatur molestias consequuntur temporibus mollitia sapiente!
+      </p>
+    </section>
+    <section class="become-marketer">
+      <form action="" method="post">
+        <h2>Demande de support</h2>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit,
-          blanditiis culpa impedit delectus porro dolor vel id consequuntur ex
-          necessitatibus, magni architecto, doloremque inventore eaque? Iusto,
-          facere aut, sit inventore sapiente, nesciunt rem ratione dolorem
-          mollitia pariatur doloribus repellat! Repellendus atque ipsa iste amet
-          aspernatur molestias consequuntur temporibus mollitia sapiente!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptates id doloribus deserunt
+          asperiores. Doloremque dolor illo quaerat?
         </p>
-      </section>
-      <section class="become-marketer">
-        <form action="post">
-          <h2>Demande de support</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptates id doloribus deserunt asperiores. Doloremque dolor illo quaerat?
-          </p>
-            <div class="form-group">
-              <input type="text" name="name" id="name" class="form-control" placeholder="Nom">
-            </div>
-            <div class="form-group">
-              <input type="text" name="fname" id="fname" class="form-control" placeholder="Prénom">
-            </div>
-            <div class="form-group full">
-              <input type="number" name="phone" id="phone" class="form-control" placeholder="Téléphone">
-            </div>
-            <div class="form-group full">
-              <input type="text" name="address" id="address" class="form-control" placeholder="Adresse">
-            </div>
-          <div class="form-group">
-            <select name="type" id="type" class="form-control">
-              <option value="Installation" class="form-control">Installation</option>
-              <option value="Maintenance">Maintenance</option>
+        <div class="form-group">
+          <input type="text" name="name" id="name" class="form-control" placeholder="Nom">
+        </div>
+        <div class="form-group">
+          <input type="text" name="fname" id="fname" class="form-control" placeholder="Prénom">
+        </div>
+        <div class="form-group full">
+          <input type="number" name="phone" id="phone" class="form-control" placeholder="Téléphone">
+        </div>
+        <div class="form-group full">
+          <input type="text" name="address" id="address" class="form-control" placeholder="Adresse">
+        </div>
+        <div class="form-group">
+          <select name="object" id="object" class="form-control">
+            <% objects.forEach((object) => { %>
+              <option value="<%= object.id_obj %>"><%= object.libelle_obj %></option>
+              <% }) %>
             </select>
           </div>
-          <div class="form-group">
-            <textarea name="description" id="description" class="form-control" placeholder="Description supplementaire"></textarea>
+          <div class="form-group full">
+            <input type="date" name="date" id="date" class="form-control" placeholder="Date">
           </div>
-    
-          <div class="form-group">
-            <input type="submit" name="submit" id="submit" class="form-btn" value="Soumettre">
-          </div>
-        </form>
-      </section>
-    </div>
+        <div class="form-group">
+          <textarea name="description" id="description" class="form-control"
+            placeholder="Description supplementaire"></textarea>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" name="submit" id="submit" class="form-btn" value="Soumettre">
+        </div>
+      </form>
+    </section>
   </div>
 </section>
 
 <section class="inquiries custom-wrapper">
   <div class="description">
-      <div class="mask">
+    <div class="mask">
       <h1>Connect Your Phone With Mobile WIFI</h1>
       <ul>
         <li>Home Broadband</li>
@@ -122,47 +117,5 @@
         <a href="#" class="details">Read more</a>
       </div>
     </div>
-  </div>
-  <div class="related-questions">
-    <div class="heading">
-      <i class="section-icon fa-solid fa-wifi"></i>
-      <p class="section-title">Client Inquiries</p>
-    </div>
-      <h1>
-        Related Questions
-      </h1>
-      <div class="question-response">
-        <div class="heading">
-          <i class="fa-solid fa-chevron-right"></i>
-        <h4>What things will be provided by Evernet?</h4>
-        </div>
-        <!-- <div class="content">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolore tempora quo culpa debitis distinctio odio non exercitationem maiores nobis?
-          </p>
-        </div> -->
-      </div>
-      <div class="question-response">
-        <div class="heading">
-          <i class="fa-solid fa-chevron-right"></i>
-        <h4>What things will be provided by Evernet?</h4>
-        </div>
-        <!-- <div class="content">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolore tempora quo culpa debitis distinctio odio non exercitationem maiores nobis?
-          </p>
-        </div> -->
-      </div>
-      <div class="question-response">
-        <div class="heading">
-          <i class="fa-solid fa-chevron-right"></i>
-        <h4>What things will be provided by Evernet?</h4>
-        </div>
-        <!-- <div class="content">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolore tempora quo culpa debitis distinctio odio non exercitationem maiores nobis?
-          </p>
-        </div> -->
-      </div>
   </div>
 </section>
