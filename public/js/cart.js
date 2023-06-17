@@ -14,3 +14,13 @@ function addToCart(id) {
     });
   }
 }
+
+function increase(id) {
+  let qty = parseInt($("#qty-" + id).text());
+  $("#qty-" + id).text(qty + 1);
+}
+
+function decrease(id) {
+  let qty = parseInt($("#qty-" + id).text());
+  if (qty > 0) $("#qty-" + id).text(qty - 1);
+}

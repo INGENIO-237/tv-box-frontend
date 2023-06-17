@@ -4,15 +4,22 @@
   background-position-y: 40%;
 }
 
+section .section-hero{
+  div{
+    width: 100%;
+    background-color: #000;
+    display: flex;
+  }
+}
+
 .inquiries {
   display: flex;
   width: 100%;
-  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 
   .description {
-    width: 50%;
+    width: inherit;
     background-image: url("../images/internet-time-at-home-e1615779661254\ 1.png");
     background-size: 200%;
     background-position-x: 50%;
@@ -35,22 +42,6 @@
       text-decoration: none;
     }
   }
-
-  .related-questions {
-    height: 50%;
-    text-align: left;
-
-    .heading {
-      display: flex;
-      h4 {
-        margin-left: 1em;
-      }
-    }
-
-    p {
-      word-wrap: normal;
-    }
-  }
 }
 
 @media only screen and (min-width: 900px) {
@@ -62,11 +53,6 @@
       .mask {
         height: 100%;
       }
-    }
-
-    .related-questions {
-      margin-left: 2em;
-      width: 50%;
     }
   }
 }

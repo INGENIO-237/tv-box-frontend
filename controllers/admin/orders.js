@@ -18,16 +18,48 @@ const getOrders = (req, res) => {
 
 const getSingleOrder = (req, res) => {
   axios
-    .get(process.env.BACKEND_ENDPOINT + "/orders/" + req.params.id + "/sales")
+    .get(process.env.BACKEND_ENDPOINT + "/orders/" + req.params.id)
     .then((response) => {
-      const articles = response.data;
-      res.render("pages/admin/order-details", {
-        layout: "dashboard-layout.ejs",
-        articles: articles,
-      });
+      const order = response.data;
+
+      order.date_cmd = formatDate(order.date_cmd);
+
+      axios
+        .get(
+          process.env.BACKEND_ENDPOINT + "/orders/" + req.params.id + "/sales"
+        )
+        .then((response) => {
+          const articles = response.data;
+
+          let total = 0;
+          articles.forEach((article) => {
+            total += article.prix_art * article.qte;
+          });
+
+          res.render("pages/admin/order-details", {
+            layout: "dashboard-layout.ejs",
+            order: order,
+            articles: articles,
+            total: total,
+          });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     })
     .catch((error) => {
       console.error(error);
     });
 };
-module.exports = { getOrders, getSingleOrder };
+
+const updateOrderStatus = (req, res) => {
+  axios
+    .put(process.env.BACKEND_ENDPOINT + "/orders/" + req.params.id + "/status")
+    .then((response) => {
+      res.redirect("/orders/" + req.params.id);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+module.exports = { getOrders, getSingleOrder, updateOrderStatus };

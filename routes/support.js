@@ -1,8 +1,10 @@
+const { getToSupport, createSupportRequest } = require("../controllers/support");
+
 const router = require("express").Router();
 
-// Commercials
-router.get("/", (req, res) => {
-  res.render("pages/support");
-});
+// Support
+router.get("/", getToSupport);
+
+router.post("/", createSupportRequest);
 
 module.exports = router;

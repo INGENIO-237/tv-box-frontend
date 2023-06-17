@@ -197,7 +197,7 @@ header {
 
 .checkout {
   background: #046c75;
-  padding: 2em 1.7em;
+  padding: 1.2em;
   position: fixed;
   z-index: 999;
   top: 83.5%;
@@ -207,10 +207,6 @@ header {
   display: flex;
   align-items: center;
   cursor: pointer;
-
-  i {
-    margin-right: 0.3em;
-  }
 }
 
 .section-title {
