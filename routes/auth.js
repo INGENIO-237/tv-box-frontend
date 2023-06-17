@@ -1,4 +1,12 @@
-const { loginUser, dashboard, logoutUser } = require("../controllers/auth");
+const {
+  loginUser,
+  dashboard,
+  logoutUser,
+  profile,
+  forgotPassword,
+  updateInfos,
+  updateCredentials,
+} = require("../controllers/auth");
 const { checkLoggedIn } = require("../middlewares/user-session");
 
 const router = require("express").Router();
@@ -20,13 +28,13 @@ router.get("/logout", logoutUser);
 router.get("/dashboard", checkLoggedIn, dashboard);
 
 // Profile
-router.get("/profile", checkLoggedIn, (req, res) => {
-  res.render("pages/auth/profile", { layout: "dashboard-layout.ejs" });
-});
+router.get("/profile", checkLoggedIn, profile);
 
 // Forgot password request
-router.get("/forgot-password", (req, res) => {
-  res.render("pages/auth/forgot-password", { layout: "auth-layout.ejs" });
-});
+router.get("/forgot-password", forgotPassword);
+
+router.post("/infos", updateInfos);
+
+router.post("/credentials", updateCredentials);
 
 module.exports = router;

@@ -17,7 +17,7 @@ const becomePartner = (req, res) => {
       res.redirect("/commercials");
     })
     .catch((error) => {
-      console.error(error);
+      console.error(error.response.data.message);
     });
 };
 

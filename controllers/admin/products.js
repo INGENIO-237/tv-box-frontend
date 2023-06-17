@@ -50,7 +50,7 @@ const createProduct = async (req, res) => {
       res.redirect("/products");
     })
     .catch((error) => {
-      console.error(error);
+      console.error(error.response.data.message);
     });
 };
 
@@ -73,7 +73,7 @@ const getSingleProduct = (req, res) => {
           });
         })
         .catch((error) => {
-          console.error(error);
+          console.error(error.response.data.message);
         });
     });
 };
@@ -110,11 +110,11 @@ const updateProduct = async (req, res) => {
           res.redirect("/products");
         })
         .catch((error) => {
-          console.error(error);
+          console.error(error.response.data.message);
         });
     })
     .catch((error) => {
-      console.error(error);
+      console.error(error.response.data.message);
     });
 };
 
@@ -125,7 +125,7 @@ const deleteProduct = async (req, res) => {
       res.redirect("/products");
     })
     .catch((error) => {
-      console.error(error);
+      console.error(error.response.data.message);
     });
 };
 
