@@ -23,14 +23,14 @@ const loginUser = (req, res) => {
           res.redirect("/account/dashboard");
         })
         .catch((error) => {
-          console.error(error);
+          console.error(error.response.data.message);
         });
     })
     .catch((error) => {
-      console.error(error);
+      console.error(error.response.data.message);
       res.render("pages/auth/login", {
         layout: "auth-layout.ejs",
-        error: error,
+        error: error.response.data.message,
       });
     });
 };
@@ -47,4 +47,55 @@ const logoutUser = (req, res) => {
   });
 };
 
-module.exports = { loginUser, dashboard, logoutUser };
+const profile = (req, res) => {
+  res.render("pages/auth/profile", { layout: "dashboard-layout.ejs" });
+};
+
+const forgotPassword = (req, res) => {
+  res.render("pages/auth/forgot-password", { layout: "auth-layout.ejs" });
+};
+
+const updateInfos = (req, res) => {
+  const { email, name, fName, phone } = req.body;
+
+  axios
+    .put(process.env.BACKEND_ENDPOINT + "/users/" + req.session.user.id_usr, {
+      email_usr: email,
+      nom_usr: name,
+      prenom_usr: fName,
+      phone_usr: phone,
+    })
+    .then((response) => {
+      res.redirect("/account/logout");
+    })
+    .catch((error) => {
+      console.error(error.response.data.message);
+    });
+};
+
+const updateCredentials = (req, res) => {
+  const { email, oldPassword, newPassword } = req.body;
+
+  axios
+    .put(process.env.BACKEND_ENDPOINT + "/account/update-credentials", {
+      new_email_usr: email,
+      old_mdp_usr: oldPassword,
+      new_mdp_usr: newPassword,
+    })
+    .then((response) => {
+      res.redirect("/account/logout");
+    })
+    .catch((error) => {
+      console.error(error.response.data.message);
+    });
+};
+
+module.exports = {
+  loginUser,
+  dashboard,
+  logoutUser,
+  profile,
+  forgotPassword,
+  updateInfos,
+  updateCredentials
+};

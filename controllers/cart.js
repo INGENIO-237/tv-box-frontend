@@ -54,7 +54,7 @@ const saveBilling = (req, res) => {
         });
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error.response.data.message);
       });
   } else {
     req.session.customer = customer;
@@ -91,7 +91,7 @@ const performPayment = (req, res) => {
             qte: parseInt(cart[prop].quantity),
           })
           .catch((error) => {
-            console.error(error);
+            console.error(error.response.data.message);
           });
       }
 

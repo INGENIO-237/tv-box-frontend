@@ -25,7 +25,7 @@ const createSupportRequest = (req, res) => {
       res.redirect("/support");
     })
     .catch((error) => {
-      console.error(error);
+      console.error(error.response.data.message);
     });
 };
 
