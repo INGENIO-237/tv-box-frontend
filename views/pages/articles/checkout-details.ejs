@@ -15,9 +15,20 @@
             <h6 class="my-0"><%= cart[prop].name %></h6>
           </div>
           <div>
-            <button class="btn btn-sm btn-secondary m-3 remove">-</button>
-            <span><%= cart[prop].quantity %></span>
-            <button class="btn btn-sm btn-secondary m-3 remove">+</button>
+            <!-- <a
+              href=""
+              class="btn btn-sm btn-secondary m-3"
+              data-id="<%= parseInt(prop) %>"
+              onclick="decrease($(this).data('id'))"
+              >-</a
+            > -->
+            <span id="qty-<%= parseInt(prop) %>"><%= cart[prop].quantity %></span>
+            <!-- <a
+              class="btn btn-sm btn-secondary m-3"
+              data-id="<%= parseInt(prop) %>"
+              onclick="increase($(this).data('id'))"
+              >+</a
+            > -->
           </div>
         </div>
         <span class="text-muted">$<%= cart[prop].price %></span>

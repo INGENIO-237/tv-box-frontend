@@ -183,7 +183,11 @@
               articles[i].prix_art %></span></p>
         <a href="">See more</a>
         <div class="pricing-footer">
-          <input type="number" min="0" value="0" id="qty-<%= articles[i].id_art %>">
+          <div class="qty-section">
+            <button data-id="<%= articles[i].id_art %>" id="reduce-<%= articles[i].id_art %>" onclick="decrease($(this).data('id'))">-</button>
+            <input type="number" min="0" value="0" id="qty-<%= articles[i].id_art %>">
+            <button data-id="<%= articles[i].id_art %>" id="add-<%= articles[i].id_art %>" onclick="increase($(this).data('id'))">+</button>
+          </div>
           <button class="buy-btn" data-id="<%= articles[i].id_art %>" onclick="addToCart($(this).data('id'))">Acheter<i
               class="fa-solid fa-arrow-right"></i></button>
         </div>
@@ -245,6 +249,23 @@
         <img src="images/Ellipse 21.png" alt="" />
         <div class="names">
           <h3>Audrey steverson</h3>
+          <p>Project manager</p>
+        </div>
+      </div>
+      <p class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, voluptas
+        ipsa! Nam doloremque velit reiciendis maiores corrupti?
+      </p>
+    </div>
+    <div class="testimonial">
+      <div class="rating">
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+          class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      </div>
+      <div class="identity">
+        <img src="images/Ellipse 22.png" alt="" />
+        <div class="names">
+          <h3>Fred Rodriguez</h3>
           <p>Project manager</p>
         </div>
       </div>
