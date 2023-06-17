@@ -78,7 +78,7 @@ const updateCredentials = (req, res) => {
 
   axios
     .put(process.env.BACKEND_ENDPOINT + "/account/update-credentials", {
-      email_usr: email,
+      new_email_usr: email,
       old_mdp_usr: oldPassword,
       new_mdp_usr: newPassword,
     })
