@@ -67,6 +67,10 @@ tr {
   border-width: 0;
 }
 
+.table{
+  width: 100%;
+}
+
 .table td,
 .table th {
   border-bottom: 0;
