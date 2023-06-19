@@ -21,9 +21,9 @@ const loginUser = (req, res) => {
         .then((response) => {
           req.session.user = response.data;
 
-          if(req.session.user.id_role == 1){
+          if (req.session.user.id_role == 1) {
             res.redirect("/account/dashboard");
-          }else{
+          } else {
             res.redirect("/account/dashboard-marketer");
           }
         })
@@ -58,6 +58,45 @@ const profile = (req, res) => {
 
 const forgotPassword = (req, res) => {
   res.render("pages/auth/forgot-password", { layout: "auth-layout.ejs" });
+};
+
+const resetPasswordRequest = (req, res) => {
+  const { email } = req.body;
+
+  axios
+    .post(process.env.BACKEND_ENDPOINT + "/account/forgot-password", {
+      email_usr: email,
+    })
+    .then((response) => {
+      res.json({
+        message: `An email has been sent to you (${email}). Check your inbox.`,
+      });
+    })
+    .catch((error) => {
+      console.error(error.resposne.data.message);
+    });
+};
+
+const resetPasswordPage = (req, res) => {
+  res.render("pages/auth/reset-password", { layout: "auth-layout-2.ejs" });
+};
+
+const resetPassword = (req, res) => {
+  const { newPassword } = req.body;
+
+  axios
+    .post(
+      process.env.BACKEND_ENDPOINT + "/account/password-reset/" + req.params.token,
+      {
+        new_mdp: newPassword,
+      }
+    )
+    .then((response) => {
+      res.redirect("/account/login");
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 };
 
 const updateInfos = (req, res) => {
@@ -101,6 +140,9 @@ module.exports = {
   logoutUser,
   profile,
   forgotPassword,
+  resetPasswordPage,
+  resetPasswordRequest,
+  resetPassword,
   updateInfos,
-  updateCredentials
+  updateCredentials,
 };
