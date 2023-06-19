@@ -399,6 +399,16 @@ section.search {
   }
 }
 
+.cart-button {
+  padding: 0.5em;
+  margin: 0.5em;
+
+  border: none;
+  width: 30px;
+  background: #c7c7c7;
+  cursor: pointer;
+}
+
 section.pricing {
   display: block;
 
@@ -416,8 +426,12 @@ section.pricing {
     justify-content: space-between;
     flex-wrap: wrap;
     .pricing-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
       position: relative;
-      width: 25em;
+      width: 15em;
       text-align: center;
       padding: 1.4em 2em;
       border: 1px solid #d5d5d5;
@@ -467,6 +481,23 @@ section.pricing {
         color: white;
         text-decoration: none;
       }
+    }
+  }
+}
+
+.pricing-item .pricing-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .add-section {
+    float: right;
+    width: 6em;
+
+    button {
+      border: none;
+      cursor: pointer;
+      width: inherit;
     }
   }
 }

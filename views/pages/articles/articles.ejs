@@ -35,16 +35,22 @@
           <li>Home Security</li>
           <li>99% Internet Uptime</li>
         </ul> -->
+          <p><span class="price" id="<%= articles[i].id_art %>" data-price="<%= articles[i].prix_art %>">$<%=
+                articles[i].prix_art %></span></p>
+          <a href="">See more</a>
         </div>
-        <p><span class="price" id="<%= articles[i].id_art %>" data-price="<%= articles[i].prix_art %>">$<%= articles[i].prix_art %></span></p>
-        <a href="">See more</a>
         <div class="pricing-footer">
           <div class="qty-section">
-            <button data-id="<%= articles[i].id_art %>" id="reduce-<%= articles[i].id_art %>" onclick="decrease($(this).data('id'))">-</button>
+            <button class="cart-button" data-id="<%= articles[i].id_art %>" id="reduce-<%= articles[i].id_art %>"
+              onclick="decrease($(this).data('id'))">-</button>
             <span id="qty-<%= articles[i].id_art %>">0</span>
-            <button data-id="<%= articles[i].id_art %>" id="add-<%= articles[i].id_art %>" onclick="increase($(this).data('id'))">+</button>
+            <button class="cart-button" data-id="<%= articles[i].id_art %>" id="add-<%= articles[i].id_art %>"
+              onclick="increase($(this).data('id'))">+</button>
           </div>
-          <button class="buy-btn" data-id="<%= articles[i].id_art %>" onclick="addToCart($(this).data('id'))">Acheter<i class="fa-solid fa-arrow-right"></i></button>
+          <div class="add-section">
+            <button class="buy-btn" data-id="<%= articles[i].id_art %>"
+              onclick="addToCart($(this).data('id'))">Acheter<i class="fa-solid fa-arrow-right"></i></button>
+          </div>
         </div>
       </div>
       <% } %>

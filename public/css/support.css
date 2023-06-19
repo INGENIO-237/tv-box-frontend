@@ -4,15 +4,20 @@
   background-position-y: 40%;
 }
 
+section .section-hero div {
+  width: 100%;
+  background-color: #000;
+  display: flex;
+}
+
 .inquiries {
   display: flex;
   width: 100%;
-  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
 .inquiries .description {
-  width: 50%;
+  width: inherit;
   background-image: url("../images/internet-time-at-home-e1615779661254 1.png");
   background-size: 200%;
   background-position-x: 50%;
@@ -32,19 +37,6 @@
   color: inherit;
   text-decoration: none;
 }
-.inquiries .related-questions {
-  height: 50%;
-  text-align: left;
-}
-.inquiries .related-questions .heading {
-  display: flex;
-}
-.inquiries .related-questions .heading h4 {
-  margin-left: 1em;
-}
-.inquiries .related-questions p {
-  word-wrap: normal;
-}
 
 @media only screen and (min-width: 900px) {
   .inquiries {
@@ -53,9 +45,5 @@
   }
   .inquiries .description .mask {
     height: 100%;
-  }
-  .inquiries .related-questions {
-    margin-left: 2em;
-    width: 50%;
   }
 }/*# sourceMappingURL=support.css.map */
