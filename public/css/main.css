@@ -166,7 +166,7 @@ header nav ul .start {
 
 .checkout {
   background: #046c75;
-  padding: 2em 1.7em;
+  padding: 1.2em;
   position: fixed;
   z-index: 999;
   top: 83.5%;
@@ -176,9 +176,6 @@ header nav ul .start {
   display: flex;
   align-items: center;
   cursor: pointer;
-}
-.checkout i {
-  margin-right: 0.3em;
 }
 
 .section-title {
@@ -343,6 +340,15 @@ section.search .search-submit {
   color: white;
 }
 
+.cart-button {
+  padding: 0.5em;
+  margin: 0.5em;
+  border: none;
+  width: 30px;
+  background: #c7c7c7;
+  cursor: pointer;
+}
+
 section.pricing {
   display: block;
 }
@@ -360,8 +366,12 @@ section.pricing .pricing-items {
   flex-wrap: wrap;
 }
 section.pricing .pricing-items .pricing-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
-  width: 25em;
+  width: 15em;
   text-align: center;
   padding: 1.4em 2em;
   border: 1px solid #d5d5d5;
@@ -406,6 +416,21 @@ section.pricing .pricing-items .pricing-item .buy-btn {
   align-items: center;
   color: white;
   text-decoration: none;
+}
+
+.pricing-item .pricing-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pricing-item .pricing-footer .add-section {
+  float: right;
+  width: 6em;
+}
+.pricing-item .pricing-footer .add-section button {
+  border: none;
+  cursor: pointer;
+  width: inherit;
 }
 
 section.map {

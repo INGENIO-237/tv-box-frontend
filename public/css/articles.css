@@ -1,16 +1,3 @@
 .main-hero {
   background: url("../images/fabio-magalhaes-nmTm7knUnqs-unsplash.jpg");
-}
-
-.pricing-item .pricing-footer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.pricing-item .pricing-footer input {
-  width: 20%;
-  height: 35px;
-}
-.pricing-item .pricing-footer a {
-  width: 30%;
 }/*# sourceMappingURL=articles.css.map */
