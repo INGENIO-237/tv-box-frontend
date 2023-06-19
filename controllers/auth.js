@@ -20,7 +20,12 @@ const loginUser = (req, res) => {
         .get(process.env.BACKEND_ENDPOINT + "/account/current")
         .then((response) => {
           req.session.user = response.data;
-          res.redirect("/account/dashboard");
+
+          if(req.session.user.id_role == 1){
+            res.redirect("/account/dashboard");
+          }else{
+            res.redirect("/account/dashboard-marketer");
+          }
         })
         .catch((error) => {
           console.error(error.response.data.message);

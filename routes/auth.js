@@ -7,6 +7,7 @@ const {
   updateInfos,
   updateCredentials,
 } = require("../controllers/auth");
+const dashboardMarketer = require("../controllers/marketer/dashboard");
 const { checkLoggedIn } = require("../middlewares/user-session");
 
 const router = require("express").Router();
@@ -26,6 +27,11 @@ router.get("/logout", logoutUser);
 
 // Dashboard
 router.get("/dashboard", checkLoggedIn, dashboard);
+
+
+// Dashboard Marketer
+router.get("/dashboard-marketer", checkLoggedIn, dashboardMarketer);
+
 
 // Profile
 router.get("/profile", checkLoggedIn, profile);
