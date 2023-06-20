@@ -1,6 +1,6 @@
 function addToCart(id) {
   var price = $("#" + id).data("price");
-  var qty = $("#qty-" + id).val();
+  var qty = parseInt($("#qty-" + id).text());
   var name = $("#name-" + id).data("name");
 
   if (qty > 0) {

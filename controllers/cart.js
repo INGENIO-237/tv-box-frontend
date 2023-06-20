@@ -15,8 +15,6 @@ const addToCart = (req, res) => {
 
   cart[productId] = { name: name, quantity: quantity, price: price };
 
-  console.log(cart);
-
   req.session.cart = cart;
 
   const count = Object.keys(cart).length;
