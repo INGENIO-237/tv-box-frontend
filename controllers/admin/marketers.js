@@ -12,7 +12,9 @@ const getAllMarketers = (req, res) => {
       });
     })
     .catch((error) => {
-      console.error(error.response.data.message);
+      res.render("pages/errors", {
+        error: error.response.data.message,
+      });
     });
 };
 
@@ -31,7 +33,9 @@ const createMarketer = (req, res) => {
       res.redirect("/marketers");
     })
     .catch((error) => {
-      console.error(error.response);
+      res.render("pages/errors", {
+        error: error.response.data.message,
+      });
     });
 };
 
@@ -61,7 +65,9 @@ const updateMarketer = (req, res) => {
       res.redirect("/marketers");
     })
     .catch((error) => {
-      console.error(error.response);
+      res.render("pages/errors", {
+        error: error.response.data.message,
+      });
     });
 };
 
@@ -69,11 +75,13 @@ const deleteMarketer = (req, res) => {
   axios
     .delete(process.env.BACKEND_ENDPOINT + "/users/" + req.params.id)
     .then((response) => {
-        res.redirect("/marketers");
+      res.redirect("/marketers");
     })
-    .catch((error) =>{
-        console.error(error.response);
-    })
+    .catch((error) => {
+      res.render("pages/errors", {
+        error: error.response.data.message,
+      });
+    });
 };
 
 module.exports = {
@@ -81,5 +89,5 @@ module.exports = {
   createMarketer,
   getSingleMarketer,
   updateMarketer,
-  deleteMarketer
+  deleteMarketer,
 };

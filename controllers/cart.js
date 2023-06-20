@@ -54,7 +54,9 @@ const saveBilling = (req, res) => {
         });
       })
       .catch((error) => {
-        console.error(error.response.data.message);
+        res.render("pages/errors", {
+          error: error.response.data.message,
+        });
       });
   } else {
     req.session.customer = customer;
@@ -91,7 +93,9 @@ const performPayment = (req, res) => {
             qte: parseInt(cart[prop].quantity),
           })
           .catch((error) => {
-            console.error(error.response.data.message);
+            res.render("pages/errors", {
+              error: error.response.data.message,
+            });
           });
       }
 
@@ -114,7 +118,9 @@ const performPayment = (req, res) => {
           res.status(200).json({ message: response.data.message });
         })
         .catch((error) => {
-          for(prop in error) console.error(error[prop]);
+          res.render("pages/errors", {
+            error: error.response.data.message,
+          });
         });
     });
 };

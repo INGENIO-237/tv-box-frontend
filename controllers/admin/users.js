@@ -12,7 +12,9 @@ const getAllUsers = (req, res) => {
       });
     })
     .catch((error) => {
-      console.error(error.response.data.message);
+      res.render("pages/errors", {
+        error: error.response.data.message,
+      });
     });
 };
 
@@ -32,7 +34,9 @@ const createUser = (req, res) => {
       res.redirect("/users");
     })
     .catch((error) => {
-      console.error(error.response);
+      res.render("pages/errors", {
+        error: error.response.data.message,
+      });
     });
 };
 
@@ -62,7 +66,9 @@ const updateUser = (req, res) => {
       res.redirect("/users");
     })
     .catch((error) => {
-      console.error(error.response);
+      res.render("pages/errors", {
+          error: error.response.data.message,
+        });
     });
 };
 
@@ -73,7 +79,9 @@ const deleteUser = (req, res) => {
       res.redirect("/users");
     })
     .catch((error) => {
-      console.error(error.response);
+      res.render("pages/errors", {
+          error: error.response.data.message,
+        });
     });
 };
 

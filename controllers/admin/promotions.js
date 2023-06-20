@@ -16,7 +16,9 @@ const getAllPromotions = (req, res) => {
         });
       })
       .catch((error) => {
-        console.error(error.response.data.message);
+        res.render("pages/errors", {
+          error: error.response.data.message,
+        });
       });
   });
 };
@@ -34,7 +36,9 @@ const createPromotion = (req, res) => {
       res.redirect("/promotions");
     })
     .catch((error) => {
-      console.error(error.response);
+      res.render("pages/errors", {
+        error: error.response.data.message,
+      });
     });
 };
 
@@ -62,7 +66,9 @@ const updatePromotion = (req, res) => {
       res.redirect("/promotions");
     })
     .catch((error) => {
-      console.error(error.response);
+      res.render("pages/errors", {
+        error: error.response.data.message,
+      });
     });
 };
 
@@ -73,7 +79,9 @@ const deletePromotion = (req, res) => {
       res.redirect("/promotions");
     })
     .catch((error) => {
-      console.error(error.response);
+      res.render("pages/errors", {
+        error: error.response.data.message,
+      });
     });
 };
 
