@@ -44,11 +44,15 @@ const getSingleOrder = (req, res) => {
           });
         })
         .catch((error) => {
-          console.error(error.response.data.message);
+          res.render("pages/errors", {
+            error: error.response.data.message,
+          });
         });
     })
     .catch((error) => {
-      console.error(error.response.data.message);
+      res.render("pages/errors", {
+        error: error.response.data.message,
+      });
     });
 };
 
@@ -59,7 +63,9 @@ const updateOrderStatus = (req, res) => {
       res.redirect("/orders/" + req.params.id);
     })
     .catch((error) => {
-      console.error(error.response.data.message);
+      res.render("pages/errors", {
+        error: error.response.data.message,
+      });
     });
 };
 module.exports = { getOrders, getSingleOrder, updateOrderStatus };

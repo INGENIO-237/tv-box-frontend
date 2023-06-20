@@ -17,7 +17,9 @@ const renderIndex = (req, res) => {
       });
     })
     .catch((error) => {
-      console.error(error.response);
+      res.render("pages/errors", {
+        error: error.response.data.message,
+      });
     });
 };
 

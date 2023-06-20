@@ -26,11 +26,15 @@ const getAllProducts = (req, res) => {
           });
         })
         .catch((error) => {
-          console.error(error.response);
+          res.render("pages/errors", {
+          error: error.response.data.message,
+        });
         });
     })
     .catch((error) => {
-      console.error(error.response);
+      res.render("pages/errors", {
+          error: error.response.data.message,
+        });
     });
 };
 
@@ -50,7 +54,9 @@ const createProduct = async (req, res) => {
       res.redirect("/products");
     })
     .catch((error) => {
-      console.error(error.response.data.message);
+      res.render("pages/errors", {
+        error: error.response.data.message,
+      });
     });
 };
 
@@ -73,7 +79,9 @@ const getSingleProduct = (req, res) => {
           });
         })
         .catch((error) => {
-          console.error(error.response.data.message);
+          res.render("pages/errors", {
+            error: error.response.data.message,
+          });
         });
     });
 };
@@ -110,11 +118,15 @@ const updateProduct = async (req, res) => {
           res.redirect("/products");
         })
         .catch((error) => {
-          console.error(error.response.data.message);
+          res.render("pages/errors", {
+          error: error.response.data.message,
+        });
         });
     })
     .catch((error) => {
-      console.error(error.response.data.message);
+      res.render("pages/errors", {
+          error: error.response.data.message,
+        });
     });
 };
 
@@ -125,7 +137,9 @@ const deleteProduct = async (req, res) => {
       res.redirect("/products");
     })
     .catch((error) => {
-      console.error(error.response.data.message);
+      res.render("pages/errors", {
+        error: error.response.data.message,
+      });
     });
 };
 

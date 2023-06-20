@@ -28,11 +28,13 @@ const loginUser = (req, res) => {
           }
         })
         .catch((error) => {
-          console.error(error.response.data.message);
+          res.render("pages/auth/login", {
+            layout: "auth-layout.ejs",
+            error: error.response.data.message,
+          });
         });
     })
     .catch((error) => {
-      console.error(error.response.data.message);
       res.render("pages/auth/login", {
         layout: "auth-layout.ejs",
         error: error.response.data.message,
@@ -73,7 +75,10 @@ const resetPasswordRequest = (req, res) => {
       });
     })
     .catch((error) => {
-      console.error(error.resposne.data.message);
+      res.render("pages/auth/login", {
+        layout: "auth-layout.ejs",
+        error: error.response.data.message,
+      });
     });
 };
 
@@ -95,7 +100,10 @@ const resetPassword = (req, res) => {
       res.redirect("/account/login");
     })
     .catch((error) => {
-      console.error(error);
+      res.render("pages/auth/login", {
+        layout: "auth-layout.ejs",
+        error: error.response.data.message,
+      });
     });
 };
 
@@ -113,7 +121,10 @@ const updateInfos = (req, res) => {
       res.redirect("/account/logout");
     })
     .catch((error) => {
-      console.error(error.response.data.message);
+      res.render("pages/auth/login", {
+        layout: "auth-layout.ejs",
+        error: error.response.data.message,
+      });
     });
 };
 
@@ -130,7 +141,10 @@ const updateCredentials = (req, res) => {
       res.redirect("/account/logout");
     })
     .catch((error) => {
-      console.error(error.response.data.message);
+      res.render("pages/auth/login", {
+        layout: "auth-layout.ejs",
+        error: error.response.data.message,
+      });
     });
 };
 
