@@ -1,4 +1,9 @@
 const axios = require("axios");
+const {
+  getTotalSalesAmount,
+  getSalesOfTheMonthAmount,
+} = require("../utils/sales");
+const formatDate = require("../utils/format-date");
 require("dotenv").config();
 
 // login user
@@ -43,9 +48,54 @@ const loginUser = (req, res) => {
 };
 
 const dashboard = (req, res) => {
-  res.render("pages/admin/dashboard-admin", {
-    layout: "dashboard-layout.ejs",
-  });
+  axios
+    .get(process.env.BACKEND_ENDPOINT + "/users/roles/2")
+    .then((response) => {
+      const marketers = response.data.length;
+
+      axios
+        .get(process.env.BACKEND_ENDPOINT + "/users/roles/1")
+        .then((response) => {
+          const users = response.data.length;
+
+          axios
+            .get(process.env.BACKEND_ENDPOINT + "/payments")
+            .then((response) => {
+              const totalSalesAmount = getTotalSalesAmount(response.data);
+              const salesOfTheMonthAmount = getSalesOfTheMonthAmount(
+                response.data
+              );
+
+              const payments = response.data;
+
+              payments.forEach((payment) => {
+                payment.date_paie = formatDate(payment.date_paie);
+                payment.date_cmd = formatDate(payment.date_cmd);
+              });
+
+              res.render("pages/admin/dashboard-admin", {
+                layout: "dashboard-layout.ejs",
+                marketers,
+                users,
+                totalSalesAmount,
+                salesOfTheMonthAmount,
+                payments,
+              });
+            });
+        })
+        .catch((error) => {
+          res.render("pages/auth/login", {
+            layout: "auth-layout.ejs",
+            error: error.response.data.message,
+          });
+        });
+    })
+    .catch((error) => {
+      res.render("pages/auth/login", {
+        layout: "auth-layout.ejs",
+        error: error.response.data.message,
+      });
+    });
 };
 
 const logoutUser = (req, res) => {
@@ -91,7 +141,9 @@ const resetPassword = (req, res) => {
 
   axios
     .post(
-      process.env.BACKEND_ENDPOINT + "/account/password-reset/" + req.params.token,
+      process.env.BACKEND_ENDPOINT +
+        "/account/password-reset/" +
+        req.params.token,
       {
         new_mdp: newPassword,
       }
