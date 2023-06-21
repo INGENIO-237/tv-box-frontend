@@ -21,4 +21,30 @@ const getSalesOfTheMonthAmount = (payments) => {
   return totalAmount;
 };
 
-module.exports = { getTotalSalesAmount, getSalesOfTheMonthAmount };
+const getTotalGainsAmount = (gains) => {
+  let totalAmount = 0;
+  gains.forEach((gain) => {
+    totalAmount += gain.montant_gain;
+  });
+
+  return totalAmount;
+};
+
+const getGainsOfTheMonthAmount = (gains) => {
+  const currentMonth = new Date().getMonth() + 1;
+  let totalAmount = 0;
+
+  gains.forEach((gain) => {
+    const timestamp = Date.parse(gain.date_gain);
+    const gainMonth = new Date(timestamp).getMonth() + 1;
+    if (gainMonth == currentMonth) totalAmount += gain.montant_gain;
+  });
+
+  return totalAmount;
+};
+module.exports = {
+  getTotalSalesAmount,
+  getSalesOfTheMonthAmount,
+  getTotalGainsAmount,
+  getGainsOfTheMonthAmount,
+};
