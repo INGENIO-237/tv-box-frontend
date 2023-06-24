@@ -245,7 +245,7 @@ section.features {
   .features-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     .feature-item {
       margin-bottom: 2em;

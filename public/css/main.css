@@ -211,7 +211,7 @@ header nav ul .start {
 section.features .features-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 section.features .features-list .feature-item {
   margin-bottom: 2em;
