@@ -172,10 +172,13 @@ header nav ul .start {
   top: 83.5%;
   left: 75%;
   color: white;
-  border-radius: 60px;
+  border-radius: 50px;
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+.checkout li {
+  margin: 0 0.5em;
 }
 
 .section-title {
@@ -362,7 +365,7 @@ section.pricing .promo {
 }
 section.pricing .pricing-items {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 section.pricing .pricing-items .pricing-item {
@@ -373,7 +376,7 @@ section.pricing .pricing-items .pricing-item {
   position: relative;
   width: 15em;
   text-align: center;
-  padding: 1.4em 2em;
+  padding: 0;
   border: 1px solid #d5d5d5;
   margin: 1.3em 0;
 }
@@ -418,19 +421,15 @@ section.pricing .pricing-items .pricing-item .buy-btn {
   text-decoration: none;
 }
 
-.pricing-item .pricing-footer {
+.pricing-item .pricing-footer .add-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
-.pricing-item .pricing-footer .add-section {
-  float: right;
-  width: 6em;
-}
 .pricing-item .pricing-footer .add-section button {
+  width: 5em;
   border: none;
   cursor: pointer;
-  width: inherit;
 }
 
 section.map {
