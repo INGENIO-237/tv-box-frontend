@@ -74,10 +74,12 @@ body {
 
       a {
         background: white;
-        width: 100px;
-        height: 100px;
-        padding: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin: 1em;
+        width: 2em;
+        height: 2em;
         border-radius: 50%;
       }
     }
