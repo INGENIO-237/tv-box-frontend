@@ -12,47 +12,47 @@ section .section-hero{
   }
 }
 
-.inquiries {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  flex-wrap: wrap;
+// .inquiries {
+//   display: flex;
+//   width: 100%;
+//   align-items: center;
+//   flex-wrap: wrap;
 
-  .description {
-    width: inherit;
-    background-image: url("../images/internet-time-at-home-e1615779661254\ 1.png");
-    background-size: 200%;
-    background-position-x: 50%;
+//   .description {
+//     width: inherit;
+//     background-image: url("../images/internet-time-at-home-e1615779661254\ 1.png");
+//     background-size: 200%;
+//     background-position-x: 50%;
 
-    .mask {
-      padding: 2em 1em;
-      background: rgba(5, 133, 144, 0.9);
-      color: white;
-    }
-    ul {
-      margin: 1.3em 0;
+//     .mask {
+//       padding: 2em 1em;
+//       background: rgba(5, 133, 144, 0.9);
+//       color: white;
+//     }
+//     ul {
+//       margin: 1.3em 0;
 
-      li {
-        margin-left: 1em;
-      }
-    }
+//       li {
+//         margin-left: 1em;
+//       }
+//     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-  }
-}
+//     a {
+//       color: inherit;
+//       text-decoration: none;
+//     }
+//   }
+// }
 
-@media only screen and (min-width: 900px) {
-  .inquiries {
-    flex-wrap: nowrap;
-    margin: 2em 0;
+// @media only screen and (min-width: 900px) {
+//   .inquiries {
+//     flex-wrap: nowrap;
+//     margin: 2em 0;
 
-    .description {
-      .mask {
-        height: 100%;
-      }
-    }
-  }
-}
+//     .description {
+//       .mask {
+//         height: 100%;
+//       }
+//     }
+//   }
+// }
