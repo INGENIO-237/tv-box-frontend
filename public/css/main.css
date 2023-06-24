@@ -175,10 +175,13 @@ header nav ul .start {
   z-index: 999;
   top: 83.5%;
   left: 75%;
+  width: 3em;
+  height: 3em;
   color: white;
   border-radius: 50px;
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 .checkout li {
