@@ -1,0 +1,21 @@
+<div class="container d-flex justify-content-center">
+  <div class="col-md-6 my-3">
+    <div class="card">
+      <div class="card-header pb-0 px-3">
+        <h3 class="mb-0">Details</h3>
+        <br />
+        <h5><%= supportRequest.nom_complet_cli_dmd %></h5>
+        <h6 class="text-muted"><%= supportRequest.lieu_travaux %></h6>
+        <h6 class="text-muted"><%= supportRequest.phone_cli_dmd %></h6>
+      </div>
+      <div class="card-body pt-4 p-3">
+        <p class="text-bold"><%= supportRequest.libelle_obj %></p>
+        <p><b>Received on :</b> <%= supportRequest.date_dmd %></p>
+        <p><b>Intervention date :</b> <%= supportRequest.date_travaux %></p>
+        <br>
+        <p><b>Description:</b></p>
+        <p><%= supportRequest.desc_travaux %></p>
+      </div>
+    </div>
+  </div>
+</div>

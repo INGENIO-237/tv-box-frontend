@@ -1,4 +1,10 @@
-const { getToSupport, createSupportRequest } = require("../controllers/support");
+const {
+  getToSupport,
+  createSupportRequest,
+  getAllSupportRequests,
+  getSingleSupportRequest,
+} = require("../controllers/support");
+const { checkLoggedIn } = require("../middlewares/user-session");
 
 const router = require("express").Router();
 
@@ -6,5 +12,9 @@ const router = require("express").Router();
 router.get("/", getToSupport);
 
 router.post("/", createSupportRequest);
+
+router.get("/list", checkLoggedIn, getAllSupportRequests);
+
+router.get("/:id", checkLoggedIn, getSingleSupportRequest);
 
 module.exports = router;

@@ -627,7 +627,7 @@ footer .part-2 div i {
 }
 footer .part-2 .sub-part-1 {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 footer .part-2 .sub-part-1 div {
