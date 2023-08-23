@@ -12,6 +12,10 @@ body {
   padding: 0 2em;
 }
 
+section {
+  margin-bottom: 5em;
+}
+
 .main-hero {
   width: 100%;
   height: 100vh;
@@ -38,10 +42,11 @@ body {
 
 .support {
   color: white;
-  display: block;
+  display: flex;
   text-align: center;
+  align-items: center;
   justify-content: space-between;
-  padding-bottom: 2em;
+  padding-bottom: 0.5em;
 }
 .support a {
   color: inherit;
@@ -124,7 +129,7 @@ header nav ul .start {
 .hero-content .small-intro {
   display: flex;
   align-items: center;
-  line-height: 1.7em;
+  margin-top: 3em;
 }
 .hero-content .small-intro .fa-rss {
   margin: 10px;
@@ -202,10 +207,11 @@ header nav ul .start {
 
 .section-icon {
   color: white;
-  padding: 0.5em;
-  border-radius: 50%;
   margin: 0 1em 1em 0;
   background: #26416c;
+  padding: 0.5em;
+  width: 1em;
+  border-radius: 50%;
 }
 
 section.features .features-list {
@@ -217,7 +223,7 @@ section.features .features-list .feature-item {
   margin-bottom: 2em;
   border: 1px solid #d5d5d5;
   padding: 1.2em;
-  width: 19.375em;
+  width: 19em;
 }
 section.features .features-list .feature-item i {
   color: #26416c;
@@ -229,6 +235,7 @@ section.features .features-list .feature-item h4 {
   margin: 1em 0;
 }
 section.features .description {
+  margin-top: 5em;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -237,7 +244,7 @@ section.features .description i {
   margin-right: 1em;
 }
 section.features .description h1 {
-  text-align: center;
+  text-align: left;
   margin: 1em 0;
 }
 section.features .description p {
@@ -247,9 +254,12 @@ section.features .description p {
 section.features .description .part-1 .sub-part-2 {
   margin: 1em 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 section.features .description .part-1 .sub-part-2 img {
+  margin: 1em;
   border-radius: 2%;
 }
 section.features .description .part-2 {
@@ -378,16 +388,20 @@ section.pricing .pricing-items {
   flex-wrap: wrap;
 }
 section.pricing .pricing-items .pricing-item {
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  width: 15em;
+  width: 19em;
   text-align: center;
   padding: 0;
   border: 1px solid #d5d5d5;
   margin: 1.3em 0;
+}
+section.pricing .pricing-items .pricing-item .desc, section.pricing .pricing-items .pricing-item .pricing-footer {
+  padding: 0.5em;
 }
 section.pricing .pricing-items .pricing-item .desc {
   display: flex;
@@ -722,6 +736,7 @@ footer .part-2 .credits {
   section.search {
     justify-content: space-evenly;
     align-items: center;
+    padding: 1em 10em;
   }
   section.search .heading i {
     margin: 1em 1em 1em 0;
@@ -736,15 +751,19 @@ footer .part-2 .credits {
   }
 }
 @media only screen and (min-width: 1000px) {
+  .section-icon-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .custom-wrapper {
     padding: 0 10em;
   }
   .support {
-    color: #26416c;
     display: flex;
-    text-align: center;
+    align-items: center;
     justify-content: space-between;
-    padding: 1em 2.5em;
+    padding: 0.2em 2em;
   }
   .support a {
     color: inherit;
@@ -762,8 +781,8 @@ footer .part-2 .credits {
   }
   .support ul li a {
     background: white;
-    padding: 0.3em;
-    margin: 1em;
+    padding: 0.1em;
+    margin: 0.5em 1em;
     border-radius: 50%;
   }
   header {
