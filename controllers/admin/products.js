@@ -21,20 +21,20 @@ const getAllProducts = (req, res) => {
 
           res.render("pages/admin/products", {
             layout: "dashboard-layout.ejs",
-            products: products,
-            categories: categories,
+            products,
+            categories,
           });
         })
         .catch((error) => {
           res.render("pages/errors", {
-          error: error.response.data.message,
-        });
+            error: error.response.data.message,
+          });
         });
     })
     .catch((error) => {
       res.render("pages/errors", {
-          error: error.response.data.message,
-        });
+        error: error.response.data.message,
+      });
     });
 };
 
@@ -119,14 +119,14 @@ const updateProduct = async (req, res) => {
         })
         .catch((error) => {
           res.render("pages/errors", {
-          error: error.response.data.message,
-        });
+            error: error.response.data.message,
+          });
         });
     })
     .catch((error) => {
       res.render("pages/errors", {
-          error: error.response.data.message,
-        });
+        error: error.response.data.message,
+      });
     });
 };
 

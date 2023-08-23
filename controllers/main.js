@@ -13,7 +13,7 @@ const renderIndex = (req, res) => {
       });
 
       res.render("index", {
-        articles: articles,
+        articles,
       });
     })
     .catch((error) => {
@@ -23,4 +23,4 @@ const renderIndex = (req, res) => {
     });
 };
 
-module.exports = { renderIndex }
+module.exports = { renderIndex };
